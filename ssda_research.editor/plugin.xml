@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ssda_research -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ssda_research.presentation.Ssda_researchModelWizardID"
+            name="%_UI_Ssda_researchModelWizard_label"
+            class="ssda_research.presentation.Ssda_researchModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Ssda_researchModelFile.gif">
+         <description>%_UI_Ssda_researchModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ssda_research -->
+      <editor
+            id="ssda_research.presentation.Ssda_researchEditorID"
+            name="%_UI_Ssda_researchEditor_label"
+            icon="icons/full/obj16/Ssda_researchModelFile.gif"
+            extensions="ssda_research"
+            class="ssda_research.presentation.Ssda_researchEditor"
+            contributorClass="ssda_research.presentation.Ssda_researchActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

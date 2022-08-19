@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ssda_research" version="12.0.0.2017041100">
+  <ownedViewpoints name="diabetes_plan" modelFileExtension="ssda_research">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ssda_research" domainClass="ssda_research::DiabeticRecommendationSystem" enablePopupBars="true">
+      <metamodel href="http://www.example.org/ssda_research#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="PatientNode" semanticCandidatesExpression="feature:patient" domainClass="ssda_research::Patient">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Patient.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Medicine" semanticCandidatesExpression="feature:med" domainClass="ssda_research::Medicines">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="feature:medicine_name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Medicines.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Symptoms" semanticCandidatesExpression="feature:symp" domainClass="ssda_research::Symptoms">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="feature:symptom_name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Symptoms.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Doctor" semanticCandidatesExpression="feature:doctor" domainClass="ssda_research::Doctor">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Doctor.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Diabetes Prediction" semanticCandidatesExpression="feature:pred" domainClass="ssda_research::DiabetesPrediction">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DiabetesPrediction.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Dataset" semanticCandidatesExpression="feature:dataset" domainClass="ssda_research::Dataset">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Dataset.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Random Forest Classifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::RandomForestClassifier">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/RandomForestClassifier.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="MLPClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::MLPClassifier">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/MLPClassifier.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="GradientBoostingClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::GradientBoostingClassifier">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GradientBoostingClassifier.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Gaussian Navie Bayes" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::GaussianNB">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GaussianNB.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Support Vector Classifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::SVC">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/SVC.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Logistic Regression" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::LogisticRegression">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/LogisticRegression.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="KNeighborsClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::KNeighborsClassifier">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/KNeighborsClassifier.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="VotingClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::VotingClassifier">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/VotingClassifier.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="DecisionTreeClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::DecisionTreeClassifier">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DecisionTreeClassifier.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="GridSearchCV" semanticCandidatesExpression="feature:model_op" domainClass="ssda_research::GridSearchCV">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GridSearchCV.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Pearson Correlation" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::Pearson_Correlation">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Pearson_Correlation.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="MissingValues" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::MissingValues">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/MissingValues.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="LabelEncoding" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::LabelEncoding">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/BinaryLabels.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="StandardScaler" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::StandardScaler">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Numeric_Outlier.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NumericOutlier" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::Numeric_Outlier">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Numeric_Outlier.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Undersampling" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::Undersampling">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Undersampling.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Oversampling" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::OverSampling">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/OverSampling.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="HybridSamplingMethod" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::Hybrid_Method">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Hybrid_Method.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="KFoldcross  validation" semanticCandidatesExpression="feature:cv" domainClass="ssda_research::KFold">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/KFold.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="TrainTestSplit" semanticCandidatesExpression="feature:cv" domainClass="ssda_research::TrainTestSplit">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/TrainTestSplit.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Dataset_Declaration" semanticCandidatesExpression="feature:eda" domainClass="ssda_research::DatasetDeclaration">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DatasetDeclaration.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="boxplot" semanticCandidatesExpression="feature:eda" domainClass="ssda_research::boxplot">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/boxplot.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="scatterplot" semanticCandidatesExpression="feature:eda" domainClass="ssda_research::scatter">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/scatter.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RandomizedSearchCV" semanticCandidatesExpression="feature:model_op" domainClass="ssda_research::RandomizedSearchCV">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/RandomizedSearchCV.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Patient-Doctor" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='PatientNode']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Doctor']" targetFinderExpression="feature:doctor">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Patient-Symptoms" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='PatientNode']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Symptoms']" targetFinderExpression="feature:symp">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Patient-Medicines" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='PatientNode']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Medicine']" targetFinderExpression="feature:med">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Patient-Prediction" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='PatientNode']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Diabetes%20Prediction']" targetFinderExpression="feature:view_pred">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Doctor-Patient" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Doctor']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='PatientNode']" targetFinderExpression="feature:patient">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Doctor-Medicines" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Doctor']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Medicine']" targetFinderExpression="feature:recommend_med">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Doctor-Prediction" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Doctor']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Diabetes%20Prediction']" targetFinderExpression="feature:view_pred">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Exploratoryanalysis-Dataset" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='boxplot'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset_Declaration'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='scatterplot']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset']" targetFinderExpression="feature:datasets">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Dataset-Symptoms" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Symptoms']" targetFinderExpression="feature:accessible_to">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Datapreprocessing-Dataset" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='MissingValues'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Pearson%20Correlation'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='StandardScaler'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='NumericOutlier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Undersampling'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Oversampling'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='HybridSamplingMethod'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='LabelEncoding']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset']" targetFinderExpression="feature:dataset">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OutlierDetection-Plot" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='NumericOutlier']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='boxplot'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='scatterplot']" targetFinderExpression="feature:plot">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CrossValidation-Dataset" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='TrainTestSplit'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KFoldcross%20%20validation']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset']" targetFinderExpression="feature:dataset">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ModelOptimization-Dataset" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GridSearchCV'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='RandomizedSearchCV']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset']" targetFinderExpression="feature:dataset">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ModelOptimization-estimator" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GridSearchCV'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='RandomizedSearchCV']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Random%20Forest%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Gaussian%20Navie%20Bayes'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GradientBoostingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Logistic%20Regression'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KNeighborsClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='MLPClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Support%20Vector%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='VotingClassifier']" targetFinderExpression="feature:estimator">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Modeloptimization-Prediction" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GridSearchCV'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='RandomizedSearchCV']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Diabetes%20Prediction']" targetFinderExpression="feature:generate_pred">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Classifiers-Dataset" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Random%20Forest%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KNeighborsClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Gaussian%20Navie%20Bayes'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='VotingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GradientBoostingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='MLPClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Support%20Vector%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Logistic%20Regression'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='DecisionTreeClassifier']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset']" targetFinderExpression="feature:dataset">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <centerLabelStyleDescription labelSize="11">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Classifiers-prediction" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Gaussian%20Navie%20Bayes'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GradientBoostingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KNeighborsClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Logistic%20Regression'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='MLPClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='VotingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Support%20Vector%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Random%20Forest%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='DecisionTreeClassifier']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Diabetes%20Prediction']" targetFinderExpression="feature:pred">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CrossVaidation-Classifiers" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KFoldcross%20%20validation'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='TrainTestSplit']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Random%20Forest%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='MLPClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Logistic%20Regression'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Support%20Vector%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KNeighborsClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GradientBoostingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Gaussian%20Navie%20Bayes'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='VotingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='DecisionTreeClassifier']" targetFinderExpression="feature:classifiers">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Classifiers-Cross Validation" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Random%20Forest%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='DecisionTreeClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='MLPClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Support%20Vector%20Classifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='VotingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KNeighborsClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GradientBoostingClassifier'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Gaussian%20Navie%20Bayes'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Logistic%20Regression']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KFoldcross%20%20validation'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='TrainTestSplit']" targetFinderExpression="feature:cv">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Patient" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='PatientNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Patient" referenceName="patient">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Doctor" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Doctor']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Doctor" referenceName="doctor">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Medicines" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Medicine']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Medicines" referenceName="medicines">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="medicine_name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Symptoms" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Symptoms']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Symptoms" referenceName="symptoms">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="symptom_name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Dataset" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Dataset" referenceName="dataset">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create DatasetDeclaration" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Dataset_Declaration']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::DatasetDeclaration" referenceName="exploratorydataanalysis">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Scatter" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='scatterplot']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::scatter" referenceName="exploratorydataanalysis">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create BoxPlot" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='boxplot']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::boxplot" referenceName="exploratorydataanalysis">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create MissingValues" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='MissingValues']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::MissingValues" referenceName="data_preprocessing">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql: self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Pearson Correlation" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Pearson%20Correlation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Pearson_Correlation" referenceName="data_preprocessing">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name=" Create StandardScaler" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='StandardScaler']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::StandardScaler" referenceName="data_preprocessing">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Oversampling" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Oversampling']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::OverSampling" referenceName="data_preprocessing">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Undersampling" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Undersampling']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Undersampling" referenceName="data_preprocessing">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create HybridMethod" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='HybridSamplingMethod']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Hybrid_Method" referenceName="data_preprocessing">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="LabelEncoding" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='LabelEncoding']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::LabelEncoding" referenceName="data_preprocessing">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create NumericOutliers" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='NumericOutlier']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Numeric_Outlier" referenceName="data_preprocessing">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create KFold" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KFoldcross%20%20validation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::KFold" referenceName="model_validation">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create TrainTestSplit" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='TrainTestSplit']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::TrainTestSplit" referenceName="model_validation">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create GridSearchCV" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GridSearchCV']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::GridSearchCV" referenceName="modeloptimization">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create RandomizedSearchCV" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='RandomizedSearchCV']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::RandomizedSearchCV" referenceName="model_op">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create RandomForestClassifier" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Random%20Forest%20Classifier']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::RandomForestClassifier" referenceName="estimators">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create DiabetesPrediction" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Diabetes%20Prediction']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::DiabetesPrediction" referenceName="diabetesprediction">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create LogisticRegression" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Logistic%20Regression']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::LogisticRegression" referenceName="estimators">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create KNeighborsClassifier" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='KNeighborsClassifier']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::KNeighborsClassifier" referenceName="estimators">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Support Vector Classifier" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Support%20Vector%20Classifier']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::SVC" referenceName="estimators">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Gradient Boosting Classifier" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='GradientBoostingClassifier']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::GradientBoostingClassifier" referenceName="estimators">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create GaussianNB" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Gaussian%20Navie%20Bayes']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::GaussianNB" referenceName="estimators">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create DecisionTree Classifier" forceRefresh="true">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::DecisionTreeClassifier" referenceName="estimators">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create MLPClassifier" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='MLPClassifier']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::MLPClassifier" referenceName="estimators"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create VotingClassifier" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='VotingClassifier']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::VotingClassifier" referenceName="estimators">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="aql:self.eClass().name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Patient-Doctor" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Patient-Doctor']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="doctor" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Patient-Smptoms" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Patient-Symptoms']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="symp" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Patient-Medicines" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Patient-Medicines']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="med" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Patient-Prediction" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Patient-Prediction']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="view_pred" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Doctor-Patient" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Doctor-Patient']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="patient" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Doctor-Mediines" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Doctor-Medicines']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="recommend_med" valueExpression="var:target"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Doctor-Prediction" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Doctor-Prediction']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="view_pred" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ExploratoryDataAnalysis-Dataset" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Exploratoryanalysis-Dataset']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="datasets" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Dataset-Symptoms" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Dataset-Symptoms']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="accessible_to" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="DataPreprocessing-Dataset" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Datapreprocessing-Dataset']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dataset" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="OutlierDetection-Plot" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='OutlierDetection-Plot']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="plot" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CrossValidation-Dataset" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='CrossValidation-Dataset']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dataset" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ModelOptimization-Dataset" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='ModelOptimization-Dataset']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dataset" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ModelOptimization-Estimators" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='ModelOptimization-estimator']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="estimators" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ModelOptimization-Prediction" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Modeloptimization-Prediction']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="generate_pred" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Classifiers-Dataset" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Classifiers-Dataset']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dataset" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Classifiers-Prediction" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Classifiers-prediction']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="pred" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CrossValidation-Classifiers" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='CrossVaidation-Classifiers']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="estimators" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Classifiers-Cross Validation" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Classifiers-Cross%20Validation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="cv" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="ssda_research.project.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ssda_research" nsURI="http://www.example.org/ssda_research"
+    nsPrefix="ssda_research">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="DiabeticRecommendationSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patient" upperBound="-1"
+        eType="#//Patient" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symp" upperBound="-1" eType="#//Symptoms"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="med" upperBound="-1" eType="#//Medicines"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="doctor" upperBound="-1"
+        eType="#//Doctor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pred" lowerBound="1" upperBound="2"
+        eType="#//DiabetesPrediction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" upperBound="-1"
+        eType="#//Dataset" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eda" upperBound="-1" eType="#//ExploratoryDataAnalysis"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dpreprocess" upperBound="-1"
+        eType="#//Data_Preprocessing" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model_op" upperBound="-1"
+        eType="#//ModelOptimization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="estimators" upperBound="-1"
+        eType="#//classifiers" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cv" upperBound="-1" eType="#//CrossValidation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Patient">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bmi" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activity_level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gender" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="patient_type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="age" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Other_diseases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symp" upperBound="-1" eType="#//Symptoms"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="med" upperBound="-1" eType="#//Medicines"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="doctor" upperBound="-1"
+        eType="#//Doctor" eOpposite="#//Doctor/patient"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="view_pred" lowerBound="1"
+        eType="#//DiabetesPrediction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Symptoms">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symptom_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Medicines">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="medicine_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="medicine_dossage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Doctor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clinic_timings" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phone_no" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specalization" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patient" upperBound="-1"
+        eType="#//Patient" eOpposite="#//Patient/doctor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recommend_med" upperBound="-1"
+        eType="#//Medicines"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="view_pred" lowerBound="1"
+        eType="#//DiabetesPrediction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiabetesPrediction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evaluated" upperBound="-1"
+        eType="#//Performance_Evaluation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Performance_Evaluation">
+    <eOperations name="precision_score"/>
+    <eOperations name="accuracy_score"/>
+    <eOperations name="recall_score"/>
+    <eOperations name="confusion_matrix"/>
+    <eOperations name="classification_report"/>
+    <eOperations name="auc"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Trained" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Tested" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Dataset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accessible_to" lowerBound="1"
+        upperBound="-1" eType="#//Symptoms"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Hybrid_sampling_method">
+    <eLiterals name="SMOTETomek"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Oversampling_technique">
+    <eLiterals name="SMOTE"/>
+    <eLiterals name="RandomOverSampler" value="1"/>
+    <eLiterals name="ADASYN" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnderSampling_technique">
+    <eLiterals name="TomekLinks"/>
+    <eLiterals name="NearMiss" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Sampling_strategy">
+    <eLiterals name="minority"/>
+    <eLiterals name="majority" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Voting_type">
+    <eLiterals name="hard"/>
+    <eLiterals name="soft" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Regularization">
+    <eLiterals name="l1"/>
+    <eLiterals name="l2" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Splitted_dataset" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Train_data" eSuperTypes="#//Splitted_dataset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="X_train" eType="#//Trained"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Y_train" eType="#//Trained"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Test_data" eSuperTypes="#//Splitted_dataset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="X_test" eType="#//Tested"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Y_test" eType="#//Tested"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelOptimization" abstract="true">
+    <eOperations name="fit"/>
+    <eOperations name="predict"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param_grid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="estimator" lowerBound="1"
+        upperBound="-1" eType="#//classifiers"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="splits" upperBound="-1"
+        eType="#//Splitted_dataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generate_pred" lowerBound="1"
+        eType="#//DiabetesPrediction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" upperBound="-1"
+        eType="#//Dataset"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RandomizedSearchCV" eSuperTypes="#//ModelOptimization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GridSearchCV" eSuperTypes="#//ModelOptimization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="classifiers" abstract="true">
+    <eOperations name="fit"/>
+    <eOperations name="predict"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pred" lowerBound="1" eType="#//DiabetesPrediction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="splits" lowerBound="1"
+        upperBound="2" eType="#//Splitted_dataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" lowerBound="1"
+        upperBound="-1" eType="#//Dataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cv" upperBound="-1" eType="#//CrossValidation"
+        eOpposite="#//CrossValidation/classifiers"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="random_state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="None"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RandomForestClassifier" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_depth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_features" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min_samples_split" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min_samples_leaf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="n_estimators" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="criterion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MLPClassifier" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hidden_layer_status" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="solver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GradientBoostingClassifier" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="n_estimators" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="learning_rate" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_depth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GaussianNB" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="var_smoothing" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SVC" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kernel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gamma" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="C" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogisticRegression" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="solvers" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="penalty" eType="#//Regularization"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="c_values" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KNeighborsClassifier" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metric" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="n_neighbors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VotingClassifier" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voting" eType="#//Voting_type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weights" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="estimators" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data_Preprocessing" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" upperBound="-1"
+        eType="#//Dataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="p_data" lowerBound="1"
+        upperBound="-1" eType="#//Preprocessed_data" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MissingValues" eSuperTypes="#//Data_Preprocessing">
+    <eOperations name="isnull"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutlierDetection" abstract="true" eSuperTypes="#//Data_Preprocessing">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plot" lowerBound="1" upperBound="-1"
+        eType="#//Plot"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Numeric_Outlier" eSuperTypes="#//OutlierDetection">
+    <eOperations name="IOR"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureScaling" abstract="true" eSuperTypes="#//Data_Preprocessing">
+    <eOperations name="fit_transform"/>
+    <eOperations name="transform"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardScaler" eSuperTypes="#//FeatureScaling"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Encoding" abstract="true" eSuperTypes="#//Data_Preprocessing">
+    <eOperations name="map"/>
+    <eOperations name="fit_transform"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sampling" abstract="true" eSuperTypes="#//Data_Preprocessing">
+    <eOperations name="fit_resample"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strategy" eType="#//Sampling_strategy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="random_state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="None"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Undersampling" eSuperTypes="#//Sampling">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Undersampling_technque"
+        eType="#//UnderSampling_technique"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hybrid_Method" eSuperTypes="#//Sampling">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hybrid_sampling_method"
+        eType="#//Hybrid_sampling_method"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OverSampling" eSuperTypes="#//Sampling">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sampling_technique" eType="#//Oversampling_technique"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Validation" abstract="true" eSuperTypes="#//CrossValidation">
+    <eOperations name="cross_val_score"/>
+    <eOperations name="cross_val_predict"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CrossValidation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" lowerBound="1"
+        upperBound="-1" eType="#//Dataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="splits" upperBound="2"
+        eType="#//Splitted_dataset" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="access_p_data" upperBound="-1"
+        eType="#//Preprocessed_data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifiers" lowerBound="1"
+        upperBound="-1" eType="#//classifiers" eOpposite="#//classifiers/cv"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shuffle" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="random_state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="None"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrainTestSplit" eSuperTypes="#//CrossValidation">
+    <eOperations name="train_test_split"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="train_size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="test_size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IQR">
+    <eOperations name="quantile"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Q1" eType="#//LowerQuartile"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Q2" eType="#//Median"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Q3" eType="#//UpperQuartile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="scatter" eSuperTypes="#//Plot">
+    <eOperations name="regression_line"/>
+    <eOperations name="x_axis"/>
+    <eOperations name="y_axis"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExploratoryDataAnalysis" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datasets" upperBound="-1"
+        eType="#//Dataset"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="boxplot" eSuperTypes="#//Plot">
+    <eOperations name="five_summarydata"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="whisker_width" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower_whisker" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper_whisker" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iqr" lowerBound="1" upperBound="-1"
+        eType="#//IQR" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatasetDeclaration" eSuperTypes="#//ExploratoryDataAnalysis">
+    <eOperations name="read_csv"/>
+    <eOperations name="head"/>
+    <eOperations name="dtypes"/>
+    <eOperations name="shape"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plot" abstract="true" eSuperTypes="#//ExploratoryDataAnalysis">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeaturesSelection" abstract="true" eSuperTypes="#//Data_Preprocessing">
+    <eOperations name="fit_transform"/>
+    <eOperations name="drop"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pearson_Correlation" eSuperTypes="#//FeaturesSelection">
+    <eOperations name="corr"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelEncoding" eSuperTypes="#//Encoding">
+    <eOperations name="BinaryLabels"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="LowerQuartile" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="UpperQuartile" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Median" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="KFold" eSuperTypes="#//Validation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="n_splits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Preprocessed_data"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionTreeClassifier" eSuperTypes="#//classifiers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creterion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_depth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="splitter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min_samples_split" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min_samples_leaf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min_weight_fraction_leaf"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class_weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_features" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ssda_research/src-gen" creationIcons="false" editDirectory="/ssda_research.edit/src-gen"
+    editorDirectory="/ssda_research.editor/src-gen" modelPluginID="ssda_research"
+    modelName="Ssda_research" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>ssda_research.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Ssda_research" disposableProviderFactory="true" ecorePackage="ssda_research.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ssda_research.ecore#//Hybrid_sampling_method">
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Hybrid_sampling_method/SMOTETomek"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ssda_research.ecore#//Oversampling_technique">
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Oversampling_technique/SMOTE"/>
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Oversampling_technique/RandomOverSampler"/>
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Oversampling_technique/ADASYN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ssda_research.ecore#//UnderSampling_technique">
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//UnderSampling_technique/TomekLinks"/>
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//UnderSampling_technique/NearMiss"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ssda_research.ecore#//Sampling_strategy">
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Sampling_strategy/minority"/>
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Sampling_strategy/majority"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ssda_research.ecore#//Voting_type">
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Voting_type/hard"/>
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Voting_type/soft"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ssda_research.ecore#//Regularization">
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Regularization/l1"/>
+      <genEnumLiterals ecoreEnumLiteral="ssda_research.ecore#//Regularization/l2"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="ssda_research.ecore#//Trained"/>
+    <genDataTypes ecoreDataType="ssda_research.ecore#//Tested"/>
+    <genDataTypes ecoreDataType="ssda_research.ecore#//LowerQuartile"/>
+    <genDataTypes ecoreDataType="ssda_research.ecore#//UpperQuartile"/>
+    <genDataTypes ecoreDataType="ssda_research.ecore#//Median"/>
+    <genClasses ecoreClass="ssda_research.ecore#//DiabeticRecommendationSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/patient"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/symp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/med"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/doctor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/pred"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/dataset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/eda"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/dpreprocess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/model_op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/estimators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/cv"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Patient">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/bmi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/activity_level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/gender"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/patient_type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/age"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/Other_diseases"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/symp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/med"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/doctor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/view_pred"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Symptoms">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Symptoms/symptom_name"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Medicines">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Medicines/medicine_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Medicines/medicine_dossage"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Doctor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Doctor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Doctor/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Doctor/clinic_timings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Doctor/phone_no"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Doctor/specalization"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Doctor/patient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Doctor/recommend_med"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Doctor/view_pred"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//DiabetesPrediction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabetesPrediction/evaluated"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Performance_Evaluation">
+      <genOperations ecoreOperation="ssda_research.ecore#//Performance_Evaluation/precision_score"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Performance_Evaluation/accuracy_score"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Performance_Evaluation/recall_score"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Performance_Evaluation/confusion_matrix"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Performance_Evaluation/classification_report"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Performance_Evaluation/auc"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Dataset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Dataset/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Dataset/accessible_to"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Splitted_dataset"/>
+    <genClasses ecoreClass="ssda_research.ecore#//Train_data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Train_data/X_train"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Train_data/Y_train"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Test_data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Test_data/X_test"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Test_data/Y_test"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//ModelOptimization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//ModelOptimization/param_grid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//ModelOptimization/estimator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//ModelOptimization/splits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//ModelOptimization/generate_pred"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//ModelOptimization/dataset"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//ModelOptimization/fit"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//ModelOptimization/predict"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//RandomizedSearchCV"/>
+    <genClasses ecoreClass="ssda_research.ecore#//GridSearchCV"/>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//classifiers">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//classifiers/pred"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//classifiers/splits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//classifiers/dataset"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//classifiers/cv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//classifiers/random_state"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//classifiers/fit"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//classifiers/predict"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//RandomForestClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//RandomForestClassifier/max_depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//RandomForestClassifier/max_features"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//RandomForestClassifier/min_samples_split"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//RandomForestClassifier/min_samples_leaf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//RandomForestClassifier/n_estimators"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//RandomForestClassifier/criterion"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//MLPClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//MLPClassifier/hidden_layer_status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//MLPClassifier/activation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//MLPClassifier/solver"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//GradientBoostingClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//GradientBoostingClassifier/n_estimators"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//GradientBoostingClassifier/learning_rate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//GradientBoostingClassifier/max_depth"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//GaussianNB">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//GaussianNB/var_smoothing"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//SVC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//SVC/kernel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//SVC/gamma"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//SVC/C"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//LogisticRegression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//LogisticRegression/solvers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//LogisticRegression/penalty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//LogisticRegression/c_values"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//KNeighborsClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//KNeighborsClassifier/metric"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//KNeighborsClassifier/p"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//KNeighborsClassifier/n_neighbors"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//VotingClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//VotingClassifier/voting"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//VotingClassifier/weights"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//VotingClassifier/estimators"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//Data_Preprocessing">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Data_Preprocessing/dataset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Data_Preprocessing/p_data"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//MissingValues">
+      <genOperations ecoreOperation="ssda_research.ecore#//MissingValues/isnull"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//OutlierDetection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//OutlierDetection/plot"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Numeric_Outlier">
+      <genOperations ecoreOperation="ssda_research.ecore#//Numeric_Outlier/IOR"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//FeatureScaling">
+      <genOperations ecoreOperation="ssda_research.ecore#//FeatureScaling/fit_transform"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//FeatureScaling/transform"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//StandardScaler"/>
+    <genClasses ecoreClass="ssda_research.ecore#//Encoding">
+      <genOperations ecoreOperation="ssda_research.ecore#//Encoding/map"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Encoding/fit_transform"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//Sampling">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Sampling/strategy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Sampling/random_state"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Sampling/fit_resample"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Undersampling">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Undersampling/Undersampling_technque"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Hybrid_Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Hybrid_Method/hybrid_sampling_method"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//OverSampling">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//OverSampling/sampling_technique"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Validation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Validation/cv"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Validation/cross_val_score"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//Validation/cross_val_predict"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//CrossValidation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//CrossValidation/dataset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//CrossValidation/splits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//CrossValidation/access_p_data"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//CrossValidation/classifiers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//CrossValidation/shuffle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//CrossValidation/random_state"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//TrainTestSplit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//TrainTestSplit/train_size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//TrainTestSplit/test_size"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//TrainTestSplit/train_test_split"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//IQR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//IQR/Q1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//IQR/Q2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//IQR/Q3"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//IQR/quantile"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//scatter">
+      <genOperations ecoreOperation="ssda_research.ecore#//scatter/regression_line"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//scatter/x_axis"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//scatter/y_axis"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//ExploratoryDataAnalysis">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//ExploratoryDataAnalysis/datasets"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//boxplot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//boxplot/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//boxplot/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//boxplot/whisker_width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//boxplot/lower_whisker"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//boxplot/upper_whisker"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//boxplot/iqr"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//boxplot/five_summarydata"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//DatasetDeclaration">
+      <genOperations ecoreOperation="ssda_research.ecore#//DatasetDeclaration/read_csv"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//DatasetDeclaration/head"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//DatasetDeclaration/dtypes"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//DatasetDeclaration/shape"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ssda_research.ecore#//Plot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Plot/title"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//FeaturesSelection">
+      <genOperations ecoreOperation="ssda_research.ecore#//FeaturesSelection/fit_transform"/>
+      <genOperations ecoreOperation="ssda_research.ecore#//FeaturesSelection/drop"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Pearson_Correlation">
+      <genOperations ecoreOperation="ssda_research.ecore#//Pearson_Correlation/corr"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//LabelEncoding">
+      <genOperations ecoreOperation="ssda_research.ecore#//LabelEncoding/BinaryLabels"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//KFold">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//KFold/n_splits"/>
+    </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Preprocessed_data"/>
+    <genClasses ecoreClass="ssda_research.ecore#//DecisionTreeClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/creterion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/max_depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/splitter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/min_samples_split"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/min_samples_leaf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/min_weight_fraction_leaf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/class_weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/max_features"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

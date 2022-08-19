@@ -1415,7 +1415,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDecisionTreeClassifier_Creterion() {
+	public EAttribute getDecisionTreeClassifier_Criterion() {
 		return (EAttribute) decisionTreeClassifierEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -2895,7 +2895,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		preprocessed_dataEClass = createEClass(PREPROCESSED_DATA);
 
 		decisionTreeClassifierEClass = createEClass(DECISION_TREE_CLASSIFIER);
-		createEAttribute(decisionTreeClassifierEClass, DECISION_TREE_CLASSIFIER__CRETERION);
+		createEAttribute(decisionTreeClassifierEClass, DECISION_TREE_CLASSIFIER__CRITERION);
 		createEAttribute(decisionTreeClassifierEClass, DECISION_TREE_CLASSIFIER__MAX_DEPTH);
 		createEAttribute(decisionTreeClassifierEClass, DECISION_TREE_CLASSIFIER__SPLITTER);
 		createEAttribute(decisionTreeClassifierEClass, DECISION_TREE_CLASSIFIER__MIN_SAMPLES_SPLIT);
@@ -3476,7 +3476,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 
 		initEClass(decisionTreeClassifierEClass, DecisionTreeClassifier.class, "DecisionTreeClassifier", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDecisionTreeClassifier_Creterion(), ecorePackage.getEString(), "creterion", null, 0, 1,
+		initEAttribute(getDecisionTreeClassifier_Criterion(), ecorePackage.getEString(), "criterion", null, 0, 1,
 				DecisionTreeClassifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDecisionTreeClassifier_Max_depth(), ecorePackage.getEString(), "max_depth", null, 0, 1,

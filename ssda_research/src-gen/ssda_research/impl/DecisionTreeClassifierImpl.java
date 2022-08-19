@@ -19,7 +19,7 @@ import ssda_research.Ssda_researchPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ssda_research.impl.DecisionTreeClassifierImpl#getCreterion <em>Creterion</em>}</li>
+ *   <li>{@link ssda_research.impl.DecisionTreeClassifierImpl#getCriterion <em>Criterion</em>}</li>
  *   <li>{@link ssda_research.impl.DecisionTreeClassifierImpl#getMax_depth <em>Max depth</em>}</li>
  *   <li>{@link ssda_research.impl.DecisionTreeClassifierImpl#getSplitter <em>Splitter</em>}</li>
  *   <li>{@link ssda_research.impl.DecisionTreeClassifierImpl#getMin_samples_split <em>Min samples split</em>}</li>
@@ -33,24 +33,24 @@ import ssda_research.Ssda_researchPackage;
  */
 public class DecisionTreeClassifierImpl extends classifiersImpl implements DecisionTreeClassifier {
 	/**
-	 * The default value of the '{@link #getCreterion() <em>Creterion</em>}' attribute.
+	 * The default value of the '{@link #getCriterion() <em>Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCreterion()
+	 * @see #getCriterion()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CRETERION_EDEFAULT = null;
+	protected static final String CRITERION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCreterion() <em>Creterion</em>}' attribute.
+	 * The cached value of the '{@link #getCriterion() <em>Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCreterion()
+	 * @see #getCriterion()
 	 * @generated
 	 * @ordered
 	 */
-	protected String creterion = CRETERION_EDEFAULT;
+	protected String criterion = CRITERION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMax_depth() <em>Max depth</em>}' attribute.
@@ -217,8 +217,8 @@ public class DecisionTreeClassifierImpl extends classifiersImpl implements Decis
 	 * @generated
 	 */
 	@Override
-	public String getCreterion() {
-		return creterion;
+	public String getCriterion() {
+		return criterion;
 	}
 
 	/**
@@ -227,12 +227,12 @@ public class DecisionTreeClassifierImpl extends classifiersImpl implements Decis
 	 * @generated
 	 */
 	@Override
-	public void setCreterion(String newCreterion) {
-		String oldCreterion = creterion;
-		creterion = newCreterion;
+	public void setCriterion(String newCriterion) {
+		String oldCriterion = criterion;
+		criterion = newCriterion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRETERION, oldCreterion, creterion));
+					Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRITERION, oldCriterion, criterion));
 	}
 
 	/**
@@ -414,8 +414,8 @@ public class DecisionTreeClassifierImpl extends classifiersImpl implements Decis
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRETERION:
-			return getCreterion();
+		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRITERION:
+			return getCriterion();
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__MAX_DEPTH:
 			return getMax_depth();
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__SPLITTER:
@@ -442,8 +442,8 @@ public class DecisionTreeClassifierImpl extends classifiersImpl implements Decis
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRETERION:
-			setCreterion((String) newValue);
+		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRITERION:
+			setCriterion((String) newValue);
 			return;
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__MAX_DEPTH:
 			setMax_depth((String) newValue);
@@ -478,8 +478,8 @@ public class DecisionTreeClassifierImpl extends classifiersImpl implements Decis
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRETERION:
-			setCreterion(CRETERION_EDEFAULT);
+		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRITERION:
+			setCriterion(CRITERION_EDEFAULT);
 			return;
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__MAX_DEPTH:
 			setMax_depth(MAX_DEPTH_EDEFAULT);
@@ -514,8 +514,8 @@ public class DecisionTreeClassifierImpl extends classifiersImpl implements Decis
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRETERION:
-			return CRETERION_EDEFAULT == null ? creterion != null : !CRETERION_EDEFAULT.equals(creterion);
+		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRITERION:
+			return CRITERION_EDEFAULT == null ? criterion != null : !CRITERION_EDEFAULT.equals(criterion);
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__MAX_DEPTH:
 			return MAX_DEPTH_EDEFAULT == null ? max_depth != null : !MAX_DEPTH_EDEFAULT.equals(max_depth);
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__SPLITTER:
@@ -548,8 +548,8 @@ public class DecisionTreeClassifierImpl extends classifiersImpl implements Decis
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (creterion: ");
-		result.append(creterion);
+		result.append(" (criterion: ");
+		result.append(criterion);
 		result.append(", max_depth: ");
 		result.append(max_depth);
 		result.append(", splitter: ");

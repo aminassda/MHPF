@@ -3962,13 +3962,13 @@ public interface Ssda_researchPackage extends EPackage {
 	int DECISION_TREE_CLASSIFIER__RANDOM_STATE = CLASSIFIERS__RANDOM_STATE;
 
 	/**
-	 * The feature id for the '<em><b>Creterion</b></em>' attribute.
+	 * The feature id for the '<em><b>Criterion</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DECISION_TREE_CLASSIFIER__CRETERION = CLASSIFIERS_FEATURE_COUNT + 0;
+	int DECISION_TREE_CLASSIFIER__CRITERION = CLASSIFIERS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max depth</b></em>' attribute.
@@ -5088,15 +5088,15 @@ public interface Ssda_researchPackage extends EPackage {
 	EClass getDecisionTreeClassifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ssda_research.DecisionTreeClassifier#getCreterion <em>Creterion</em>}'.
+	 * Returns the meta object for the attribute '{@link ssda_research.DecisionTreeClassifier#getCriterion <em>Criterion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Creterion</em>'.
-	 * @see ssda_research.DecisionTreeClassifier#getCreterion()
+	 * @return the meta object for the attribute '<em>Criterion</em>'.
+	 * @see ssda_research.DecisionTreeClassifier#getCriterion()
 	 * @see #getDecisionTreeClassifier()
 	 * @generated
 	 */
-	EAttribute getDecisionTreeClassifier_Creterion();
+	EAttribute getDecisionTreeClassifier_Criterion();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ssda_research.DecisionTreeClassifier#getMax_depth <em>Max depth</em>}'.
@@ -7109,12 +7109,12 @@ public interface Ssda_researchPackage extends EPackage {
 		EClass DECISION_TREE_CLASSIFIER = eINSTANCE.getDecisionTreeClassifier();
 
 		/**
-		 * The meta object literal for the '<em><b>Creterion</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Criterion</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DECISION_TREE_CLASSIFIER__CRETERION = eINSTANCE.getDecisionTreeClassifier_Creterion();
+		EAttribute DECISION_TREE_CLASSIFIER__CRITERION = eINSTANCE.getDecisionTreeClassifier_Criterion();
 
 		/**
 		 * The meta object literal for the '<em><b>Max depth</b></em>' attribute feature.

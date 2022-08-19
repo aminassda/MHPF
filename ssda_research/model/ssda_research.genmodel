@@ -269,7 +269,7 @@
     </genClasses>
     <genClasses ecoreClass="ssda_research.ecore#//Preprocessed_data"/>
     <genClasses ecoreClass="ssda_research.ecore#//DecisionTreeClassifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/creterion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/criterion"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/max_depth"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/splitter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/min_samples_split"/>

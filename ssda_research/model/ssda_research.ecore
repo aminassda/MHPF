@@ -309,7 +309,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Preprocessed_data"/>
   <eClassifiers xsi:type="ecore:EClass" name="DecisionTreeClassifier" eSuperTypes="#//classifiers">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creterion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="criterion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_depth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="splitter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min_samples_split" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

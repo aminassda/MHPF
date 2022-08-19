@@ -5,7 +5,7 @@
     <semanticResources>ssda_research.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_QNbOUAd5Ee2f4t7VZe89Zg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_QPsfMAd5Ee2f4t7VZe89Zg" name="ssda_research" repPath="#_QPj8UAd5Ee2f4t7VZe89Zg" changeId="29689780-a286-48b4-823f-069862c81b90">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_QPsfMAd5Ee2f4t7VZe89Zg" name="ssda_research" repPath="#_QPj8UAd5Ee2f4t7VZe89Zg" changeId="5cc10677-7f22-4aff-8467-d718a8facf5d">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="ssda_research.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -5581,9 +5581,9 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_j8REkAeGEe2f4t7VZe89Zg" name="creterion : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="ssda_research.ecore#//DecisionTreeClassifier/creterion"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="ssda_research.ecore#//DecisionTreeClassifier/creterion"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_j8REkAeGEe2f4t7VZe89Zg" name="criterion : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="ssda_research.ecore#//DecisionTreeClassifier/criterion"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="ssda_research.ecore#//DecisionTreeClassifier/criterion"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_k-sK7geGEe2f4t7VZe89Zg" labelSize="11" labelAlignment="LEFT">
           <customFeatures>labelSize</customFeatures>
           <customFeatures>labelColor</customFeatures>

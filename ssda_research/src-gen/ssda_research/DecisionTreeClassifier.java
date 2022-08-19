@@ -11,7 +11,7 @@ package ssda_research;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ssda_research.DecisionTreeClassifier#getCreterion <em>Creterion</em>}</li>
+ *   <li>{@link ssda_research.DecisionTreeClassifier#getCriterion <em>Criterion</em>}</li>
  *   <li>{@link ssda_research.DecisionTreeClassifier#getMax_depth <em>Max depth</em>}</li>
  *   <li>{@link ssda_research.DecisionTreeClassifier#getSplitter <em>Splitter</em>}</li>
  *   <li>{@link ssda_research.DecisionTreeClassifier#getMin_samples_split <em>Min samples split</em>}</li>
@@ -27,26 +27,26 @@ package ssda_research;
  */
 public interface DecisionTreeClassifier extends classifiers {
 	/**
-	 * Returns the value of the '<em><b>Creterion</b></em>' attribute.
+	 * Returns the value of the '<em><b>Criterion</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Creterion</em>' attribute.
-	 * @see #setCreterion(String)
-	 * @see ssda_research.Ssda_researchPackage#getDecisionTreeClassifier_Creterion()
+	 * @return the value of the '<em>Criterion</em>' attribute.
+	 * @see #setCriterion(String)
+	 * @see ssda_research.Ssda_researchPackage#getDecisionTreeClassifier_Criterion()
 	 * @model
 	 * @generated
 	 */
-	String getCreterion();
+	String getCriterion();
 
 	/**
-	 * Sets the value of the '{@link ssda_research.DecisionTreeClassifier#getCreterion <em>Creterion</em>}' attribute.
+	 * Sets the value of the '{@link ssda_research.DecisionTreeClassifier#getCriterion <em>Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Creterion</em>' attribute.
-	 * @see #getCreterion()
+	 * @param value the new value of the '<em>Criterion</em>' attribute.
+	 * @see #getCriterion()
 	 * @generated
 	 */
-	void setCreterion(String value);
+	void setCriterion(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Max depth</b></em>' attribute.

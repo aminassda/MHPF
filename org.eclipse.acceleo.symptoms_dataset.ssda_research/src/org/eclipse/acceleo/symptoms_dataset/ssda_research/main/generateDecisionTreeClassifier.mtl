@@ -1,0 +1,20 @@
+[comment encoding = UTF-8 /]
+[module generateDecisionTreeClassifier('http://www.example.org/ssda_research')]
+
+
+[template public generateDecisionTreeClassifier(aDecisionTreeClassifier : DecisionTreeClassifier)]
+[comment @main/]
+[file (aDecisionTreeClassifier.eClass().name.concat('.ipynb'), false, 'UTF-8')]
+[aDecisionTreeClassifier.eClass().name.concat('=')/][aDecisionTreeClassifier.eClass().name/][aDecisionTreeClassifier.eClass().eSuperTypes.eAttributes.name.prefix('(').concat('=1').concat(')')/]
+[aDecisionTreeClassifier.eClass().eAttributes->select(name='max_depth').name.concat('"').concat(':').prefix('DT_param_grid = {"')/][aDecisionTreeClassifier.max_depth.toString().prefix('[').concat(']').concat(',')/]
+[aDecisionTreeClassifier.eClass().eAttributes->select(name='criterion').name.concat('"').concat(':').prefix('"')/][aDecisionTreeClassifier.criterion.toString().prefix('[').concat(']').concat('}')/]
+[aDecisionTreeClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='GridSearchCV').name.prefix('gsDT=').concat('(')/][aDecisionTreeClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eReferences->select(name='estimator').name.concat('=')/][aDecisionTreeClassifier.eClass().name.concat(',')/][aDecisionTreeClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eAttributes->select(name='param_grid').name.concat('=').concat('DT_param_grid').concat(')')/]
+[aDecisionTreeClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eOperations->select(name='fit').name.prefix('gsDT.').concat('(')/][aDecisionTreeClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(',')/][aDecisionTreeClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat(')')/]
+[aDecisionTreeClassifier.pred.eClass().name.concat('=')/][aDecisionTreeClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eOperations->select(name='predict').name.prefix('gsDT.').concat('(')/][aDecisionTreeClassifier.splits.eClass()->select(name='Test_data').eAttributes->select(name='X_test').name.concat(')')/]
+
+[aDecisionTreeClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='confusion_matrix').name.concat('(')/][aDecisionTreeClassifier.pred.eClass().name.concat(',')/][aDecisionTreeClassifier.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat('))')/]
+[aDecisionTreeClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.prefix('print(').concat('(gsDT').concat('.')/][aDecisionTreeClassifier.eClass().eSuperTypes.eOperations->select(name='predict').name.concat('(')/][aDecisionTreeClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(')').concat(',')/][aDecisionTreeClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat('))')/]
+[aDecisionTreeClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.concat('(').prefix('print(')/][aDecisionTreeClassifier.pred.eClass().name.concat(',')/][aDecisionTreeClassifier.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat(')')/]
+
+[/file]
+[/template]

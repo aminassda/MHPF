@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module generateSVC('http://www.example.org/ssda_research')]
+
+
+[template public generateSVC(aSVC : SVC)]
+[comment @main/][file (aSVC.eClass().name.concat('.ipynb'), false, 'UTF-8')]
+[aSVC.eClass().name.concat('=')/][aSVC.eClass()->select(name='SVC').name.concat('(')/][aSVC.eClass().eAttributes->select(name='kernel').name.concat('=').concat('"')/][aSVC.kernel->closure('linear')/][aSVC.eClass().eSuperTypes.eAttributes.name.prefix('" ,').concat('=0').concat(')')/]
+[aSVC.eClass().name.concat('.')/][aSVC.eClass().eSuperTypes.eOperations->select(name='fit').name.concat('(')/][aSVC.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(',')/][aSVC.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat(')')/]
+[aSVC.pred.eClass().name.concat('=')/][aSVC.eClass().name.concat('.')/][aSVC.eClass().eSuperTypes.eOperations->select(name='predict').name.concat('(')/][aSVC.splits.eClass()->select(name='Test_data').eAttributes->select(name='X_test').name.concat(')')/]
+[aSVC.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='confusion_matrix').name.concat('(')/][aSVC.pred.eClass().name.concat(',')/][aSVC.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat(')')/]
+[aSVC.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.prefix('print(').concat('(')/][aSVC.eClass().name.concat('.')/][aSVC.eClass().eSuperTypes.eOperations->select(name='predict').name.concat('(')/][aSVC.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(')').concat(',')/][aSVC.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat('))')/]
+[aSVC.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.prefix('print(').concat('(')/][aSVC.pred.eClass().name.concat(',')/][aSVC.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat(')')/]
+
+
+[/file]
+[/template]

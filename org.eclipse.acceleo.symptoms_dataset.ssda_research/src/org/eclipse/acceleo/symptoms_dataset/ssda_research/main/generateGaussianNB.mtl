@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module generateGaussianNB('http://www.example.org/ssda_research')]
+[template public generateGaussianNB(aGaussianNB : GaussianNB)]
+[comment @main/]
+[file (aGaussianNB.eClass().name.concat('.ipynb'), false, 'UTF-8')]
+[aGaussianNB.eClass().name.concat('=')/][aGaussianNB.eClass()->select(name='GaussianNB').name.concat('()')/]
+param_grid_nb=[aGaussianNB.eClass()->select(name='GaussianNB').eAttributes->select(name='var_smoothing').name.prefix('{"').concat('"').concat(':')/][aGaussianNB.var_smoothing.toString()->closure('np.logspace(0,-9, num=100)').concat('}')/]
+[aGaussianNB.eClass().eSuperTypes.siblings(EClass)->select(name='GridSearchCV').name.prefix('gsGB=').concat('(')/][aGaussianNB.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eReferences->select(name='estimator').name.concat('=')/][aGaussianNB.eClass().name.concat(',')/][aGaussianNB.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eAttributes->select(name='param_grid').name.concat('=').concat('param_grid_nb').concat(')')/]
+[aGaussianNB.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eOperations->select(name='fit').name.prefix('gsGB.').concat('(')/][aGaussianNB.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(',')/][aGaussianNB.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat(')')/]
+[aGaussianNB.pred.eClass().name.concat('=')/][aGaussianNB.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eOperations->select(name='predict').name.prefix('gsGB.').concat('(')/][aGaussianNB.splits.eClass()->select(name='Test_data').eAttributes->select(name='X_test').name.concat(')')/]
+
+[aGaussianNB.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='confusion_matrix').name.concat('(')/][aGaussianNB.pred.eClass().name.concat(',')/][aGaussianNB.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat('))')/]
+[aGaussianNB.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.prefix('print(').concat('(gsGB').concat('.')/][aGaussianNB.eClass().eSuperTypes.eOperations->select(name='predict').name.concat('(')/][aGaussianNB.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(')').concat(',')/][aGaussianNB.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat('))')/]
+[aGaussianNB.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.concat('(').prefix('print(')/][aGaussianNB.pred.eClass().name.concat(',')/][aGaussianNB.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat(')')/]
+
+[/file]
+[/template]

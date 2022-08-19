@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module generateMLPClassifier('http://www.example.org/ssda_research')]
+
+
+[template public generateMLPClassifier(aMLPClassifier : MLPClassifier)]
+[comment @main/]
+[file (aMLPClassifier.eClass().name.concat('.ipynb'), false, 'UTF-8')]
+[aMLPClassifier.eClass().name.concat('=')/][aMLPClassifier.eClass()->select(name='MLPClassifier').name.concat('(')/][aMLPClassifier.eClass()->select(name='MLPClassifier').eAttributes->select(name='hidden_layer_status').name.concat('=')/][aMLPClassifier.hidden_layer_status/][aMLPClassifier.eClass()->select(name='MLPClassifier').eAttributes->select(name='activation').name.prefix(',').concat('=').concat('"')/][aMLPClassifier.activation.concat('"').concat(',')/][aMLPClassifier.eClass()->select(name='MLPClassifier').eAttributes->select(name='solver').name.concat('=').concat('"')/][aMLPClassifier.solver.concat('"')/][aMLPClassifier.eClass().eSuperTypes.eAttributes.name.prefix(',').concat('= 1').concat(')')/]
+[aMLPClassifier.eClass().name.concat('.')/][aMLPClassifier.eClass().eSuperTypes.eOperations->select(name='fit').name.concat('(')/][aMLPClassifier.eClass().eSuperTypes.eReferences->select(name='splits').eReferenceType.siblings(EClass)->select(name='Train_data').eAttributes->select(name='X_train').name.concat(',')/][aMLPClassifier.eClass().eSuperTypes.eReferences->select(name='splits').eReferenceType.siblings(EClass)->select(name='Train_data').eAttributes->select(name='Y_train').name.concat(')')/]
+[aMLPClassifier.pred.eClass().name.concat('=')/][aMLPClassifier.eClass().name.concat('.')/][aMLPClassifier.eClass().eSuperTypes.eOperations->select(name='predict').name.concat('(')/][aMLPClassifier.eClass().eSuperTypes.eAllReferences->asSet().eReferenceType.siblings(EClass)->select(name='Test_data').eAttributes->select(name='X_test').name->asSet().concat(')')/]
+
+[aMLPClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='confusion_matrix').name.concat('(')/][aMLPClassifier.pred.eClass().name.concat(',')/][aMLPClassifier.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat(')')/]
+[aMLPClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.prefix('print(').concat('(')/][aMLPClassifier.eClass().name.concat('.')/][aMLPClassifier.eClass().eSuperTypes.eOperations->select(name='predict').name.concat('(')/][aMLPClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(')').concat(',')/][aMLPClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat('))')/]
+[aMLPClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.prefix('print(').concat('(')/][aMLPClassifier.pred.eClass().name.concat(',')/][aMLPClassifier.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat(')')/]
+
+[/file]
+[/template]

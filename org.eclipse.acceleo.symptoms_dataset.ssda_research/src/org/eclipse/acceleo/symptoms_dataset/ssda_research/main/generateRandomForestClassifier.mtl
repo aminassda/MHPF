@@ -1,0 +1,25 @@
+[comment encoding = UTF-8 /]
+[module generateRandomForestClassifier('http://www.example.org/ssda_research')]
+
+
+[template public generateRandomForestClassifier(aRandomForestClassifier : RandomForestClassifier)]
+[comment @main/]
+[file (aRandomForestClassifier.eClass().name.concat('.ipynb'), false, 'UTF-8')]
+[aRandomForestClassifier.eClass().name.concat('=')/][aRandomForestClassifier.eClass().name.concat('(')/][aRandomForestClassifier.eClass().eSuperTypes.eAttributes.name.concat('= 1').concat(')')/]
+grid=[aRandomForestClassifier.eClass().eAttributes->select(name='max_depth').name.prefix('{"').concat('":').concat('[')/][aRandomForestClassifier.max_depth.concat(']').concat(',')/]
+[aRandomForestClassifier.eClass().eAttributes->select(name='max_features').name.prefix('"').concat('":').concat('[')/][aRandomForestClassifier.max_features.concat(']').concat(',')/]
+[aRandomForestClassifier.eClass().eAttributes->select(name='min_samples_split').name.prefix('"').concat('":').concat('[')/][aRandomForestClassifier.min_samples_split.concat(']').concat(',')/]
+[aRandomForestClassifier.eClass().eAttributes->select(name='min_samples_leaf').name.prefix('"').concat('":').concat('[')/][aRandomForestClassifier.min_samples_leaf.concat(']').concat(',')/]
+[aRandomForestClassifier.eClass().eAttributes->select(name='n_estimators').name.prefix('"').concat('":').concat('[')/][aRandomForestClassifier.n_estimators.concat(']').concat(',')/]
+[aRandomForestClassifier.eClass().eAttributes->select(name='criterion').name.prefix('"').concat('":').concat('[')/][aRandomForestClassifier.criterion.prefix('"').concat('"').concat(']').concat('}')/]
+
+[aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='GridSearchCV').name.prefix('gsRF=').concat('(')/][aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eReferences->select(name='estimator').name.concat('=')/][aRandomForestClassifier.eClass().name.concat(',')/][aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eAttributes->select(name='param_grid').name.concat('=').concat('grid').concat(')')/]
+[aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eOperations->select(name='fit').name.prefix('gsRF.').concat('(')/][aRandomForestClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(',')/][aRandomForestClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat(')')/]
+[aRandomForestClassifier.pred.eClass().name.concat('=')/][aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='ModelOptimization').eOperations->select(name='predict').name.prefix('gsRF.').concat('(')/][aRandomForestClassifier.splits.eClass()->select(name='Test_data').eAttributes->select(name='X_test').name.concat(')')/]
+
+[aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='confusion_matrix').name.concat('(')/][aRandomForestClassifier.pred.eClass().name.concat(',')/][aRandomForestClassifier.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat('))')/]
+[aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.prefix('print(').concat('(gsRF').concat('.')/][aRandomForestClassifier.eClass().eSuperTypes.eOperations->select(name='predict').name.concat('(')/][aRandomForestClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='X_train').name.concat(')').concat(',')/][aRandomForestClassifier.splits.eClass()->select(name='Train_data').eAttributes->select(name='Y_train').name.concat('))')/]
+[aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='classification_report').name.concat('(').prefix('print(')/][aRandomForestClassifier.pred.eClass().name.concat(',')/][aRandomForestClassifier.splits.eClass()->select(name='Test_data').eAttributes->select(name='Y_test').name.concat(')')/]
+
+[/file]
+[/template]

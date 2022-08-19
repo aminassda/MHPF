@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ssda_research:DiabeticRecommendationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ssda_research="http://www.example.org/ssda_research">
+  <patient name="John" height="176 cm" weight="113 kg" bmi="36.5" activity_level="light" gender="Male" patient_type="Type-1" age="43" Other_diseases="Kidney stones" symp="//@symp.1 //@symp.2 //@symp.0" med="//@med.1" doctor="//@doctor.0" view_pred="//@pred.0"/>
+  <patient name="Sana" height="170 cm" weight="105 kg" bmi="36.3" activity_level="none" gender="Female" patient_type="Type-2" age="33" Other_diseases="cirrhosis" symp="//@symp.1 //@symp.2 //@symp.3" med="//@med.0" doctor="//@doctor.1" view_pred="//@pred.0"/>
+  <symp symptom_name="insulin 150 mg/dl"/>
+  <symp symptom_name="Polydispia"/>
+  <symp symptom_name="Polyuria"/>
+  <symp symptom_name="Glucose 200 mg/dl"/>
+  <med medicine_name="sulfonylurea " medicine_dossage="100 mg"/>
+  <med medicine_name="metformin " medicine_dossage="100 mg"/>
+  <doctor name="Samee" address="H-12, Jinnah Hospital, Islamabad" clinic_timings="10 am- 10 pm" phone_no="331567789" specalization="Encrologist" patient="//@patient.0" recommend_med="//@med.1" view_pred="//@pred.0"/>
+  <doctor name="Jeffey" address="H-12, Jinnah Hospital, Islamabad" clinic_timings="4 am - 7 pm" phone_no="865437788" specalization="Encrologist" patient="//@patient.1" recommend_med="//@med.0" view_pred="//@pred.0"/>
+  <pred>
+    <evaluated/>
+  </pred>
+  <dataset type="csv" accessible_to="//@symp.3 //@symp.0 //@symp.1 //@symp.2"/>
+  <eda xsi:type="ssda_research:scatter" datasets="//@dataset.0" title="scatter"/>
+  <eda xsi:type="ssda_research:boxplot" datasets="//@dataset.0" title="boxplot" whisker_width="1.5" lower_whisker="Q1 -(whisker_width*IQR)" upper_whisker="Q1 +(whisker_width*IQR)"/>
+  <eda xsi:type="ssda_research:DatasetDeclaration" datasets="//@dataset.0"/>
+  <dpreprocess xsi:type="ssda_research:MissingValues" dataset="//@dataset.0"/>
+  <dpreprocess xsi:type="ssda_research:StandardScaler" dataset="//@dataset.0"/>
+  <dpreprocess xsi:type="ssda_research:Undersampling" dataset="//@dataset.0"/>
+  <dpreprocess xsi:type="ssda_research:OverSampling" dataset="//@dataset.0"/>
+  <dpreprocess xsi:type="ssda_research:Hybrid_Method" dataset="//@dataset.0"/>
+  <dpreprocess xsi:type="ssda_research:Pearson_Correlation" dataset="//@dataset.0"/>
+  <dpreprocess xsi:type="ssda_research:LabelEncoding" dataset="//@dataset.0"/>
+  <dpreprocess xsi:type="ssda_research:Numeric_Outlier" dataset="//@dataset.0" plot="//@eda.1"/>
+  <model_op xsi:type="ssda_research:GridSearchCV" param_grid="grid" estimator="//@estimators.6 //@estimators.1" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" generate_pred="//@pred.0" dataset="//@dataset.0"/>
+  <estimators xsi:type="ssda_research:LogisticRegression" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.0" solvers="'newton-cg', 'lbfgs', 'liblinear'" penalty="l2" c_values="100, 10, 1.0, 0.1, 0.01"/>
+  <estimators xsi:type="ssda_research:RandomForestClassifier" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.1 //@cv.0" max_depth="4" max_features="1,2,10" min_samples_split="1,2,10" min_samples_leaf="1,2,10" n_estimators="100" criterion="gini"/>
+  <estimators xsi:type="ssda_research:VotingClassifier" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.1" weights="false" estimators="estimators"/>
+  <estimators xsi:type="ssda_research:GaussianNB" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.1 //@cv.0" var_smoothing="1e-9"/>
+  <estimators xsi:type="ssda_research:KNeighborsClassifier" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.0" metric="minkowski" p="2" n_neighbors="neighbors"/>
+  <estimators xsi:type="ssda_research:SVC" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.0" kernel="linear, rbf"/>
+  <estimators xsi:type="ssda_research:DecisionTreeClassifier" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.0" creterion="&quot;gini&quot;, &quot;entropy&quot;" max_depth="1,4,5,6,7,8,2" splitter="0" class_weight="0"/>
+  <estimators xsi:type="ssda_research:GradientBoostingClassifier" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.1 //@cv.0" n_estimators="100" learning_rate="0.1" max_depth="3"/>
+  <estimators xsi:type="ssda_research:MLPClassifier" pred="//@pred.0" splits="//@cv.0/@splits.0 //@cv.0/@splits.1" dataset="//@dataset.0" cv="//@cv.0" hidden_layer_status="10" activation="relu" solver="adam"/>
+  <cv xsi:type="ssda_research:TrainTestSplit" dataset="//@dataset.0" classifiers="//@estimators.6 //@estimators.3 //@estimators.7 //@estimators.4 //@estimators.0 //@estimators.8 //@estimators.1 //@estimators.5" train_size="train size" test_size="test size">
+    <splits xsi:type="ssda_research:Train_data" X_train="trained" Y_train="trained"/>
+    <splits xsi:type="ssda_research:Test_data" X_test="tested" Y_test="tested"/>
+  </cv>
+  <cv xsi:type="ssda_research:KFold" dataset="//@dataset.0" classifiers="//@estimators.1 //@estimators.2 //@estimators.3 //@estimators.7" cv="cv" n_splits="splits"/>
+</ssda_research:DiabeticRecommendationSystem>

@@ -44,7 +44,7 @@ public class DecisionTreeClassifierItemProvider extends classifiersItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCreterionPropertyDescriptor(object);
+			addCriterionPropertyDescriptor(object);
 			addMax_depthPropertyDescriptor(object);
 			addSplitterPropertyDescriptor(object);
 			addMin_samples_splitPropertyDescriptor(object);
@@ -57,18 +57,18 @@ public class DecisionTreeClassifierItemProvider extends classifiersItemProvider 
 	}
 
 	/**
-	 * This adds a property descriptor for the Creterion feature.
+	 * This adds a property descriptor for the Criterion feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCreterionPropertyDescriptor(Object object) {
+	protected void addCriterionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DecisionTreeClassifier_creterion_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DecisionTreeClassifier_creterion_feature",
+						getResourceLocator(), getString("_UI_DecisionTreeClassifier_criterion_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DecisionTreeClassifier_criterion_feature",
 								"_UI_DecisionTreeClassifier_type"),
-						Ssda_researchPackage.Literals.DECISION_TREE_CLASSIFIER__CRETERION, true, false, false,
+						Ssda_researchPackage.Literals.DECISION_TREE_CLASSIFIER__CRITERION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -231,7 +231,7 @@ public class DecisionTreeClassifierItemProvider extends classifiersItemProvider 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DecisionTreeClassifier.class)) {
-		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRETERION:
+		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__CRITERION:
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__MAX_DEPTH:
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__SPLITTER:
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER__MIN_SAMPLES_SPLIT:

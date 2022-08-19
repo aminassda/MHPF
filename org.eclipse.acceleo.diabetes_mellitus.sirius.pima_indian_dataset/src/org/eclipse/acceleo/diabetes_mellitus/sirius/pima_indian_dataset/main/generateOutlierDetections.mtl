@@ -1,0 +1,37 @@
+[comment encoding = UTF-8 /]
+[module generateOutlierDetections('http://www.example.org/ssda_research')]
+
+[template public generateOutlierDetections(anOutlierDetection : OutlierDetection)]
+[comment @main/]
+[file (anOutlierDetection.eClass().name.concat('.ipynb'), false, 'UTF-8')]
+[anOutlierDetection.plot.eClass().eReferences.eReferenceType.eAttributes->select(name='Q3').name.concat('=')/][anOutlierDetection.dataset.eClass().name.concat('.')/][anOutlierDetection.plot.eClass().eReferences.eReferenceType.eOperations.name.toString().concat('(0.25)')/]
+[anOutlierDetection.plot.eClass().eReferences.eReferenceType.eAttributes->select(name='Q1').name.concat('=')/][anOutlierDetection.dataset.eClass().name.concat('.')/][anOutlierDetection.plot.eClass().eReferences.eReferenceType.eOperations.name.toString().concat('(0.75)')/]
+
+[anOutlierDetection.plot.eClass().eReferences.eReferenceType.name.prefix('print(').concat('=')/][anOutlierDetection.plot.eClass().eReferences.eReferenceType.eAttributes->select(name='Q3').name.concat('-')/][anOutlierDetection.plot.eClass().eReferences.eReferenceType.eAttributes->select(name='Q1').name.concat(')')/]
+[for(aboxplot : boxplot|anOutlierDetection.plot)][aboxplot.generateElement()/][/for]
+
+df_oulier_detected=np.where([anOutlierDetection.dataset.eClass().name.concat('>')/][for(aboxplot : boxplot|anOutlierDetection.plot)][aboxplot.generateupper_whisker().concat(',')/][/for][for(aboxplot : boxplot|anOutlierDetection.plot)][aboxplot.generateupper_whisker().concat(',').concat('np.where(')/][/for][anOutlierDetection.dataset.eClass().name.concat('<')/][for(aboxplot : boxplot|anOutlierDetection.plot)][aboxplot.generatelower_whisker().concat(',')/][/for][for(aboxplot : boxplot|anOutlierDetection.plot)][aboxplot.generatelower_whisker().concat(',')/][/for][anOutlierDetection.dataset.eClass().name.concat(')').concat(')').concat('\n')/][anOutlierDetection.dataset.eClass().name.concat('=pd.DataFrame(').concat('df_oulier_detected,columns=').concat('[').concat(' "Pregnancies", "Glucose","BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction","Age","Outcome" ').concat('])')/]
+
+[anOutlierDetection.dataset.eClass().name.prefix('X=').concat('.')/][anOutlierDetection.eClass().eSuperTypes.siblings(EClass)->select(name='FeaturesSelection').eOperations->select(name='drop').name.concat('(["').concat('Outcome').concat('"]').concat(',').concat('axis=1)')/]
+[anOutlierDetection.dataset.eClass().name.prefix('Y=').concat('["Outcome"]')/]
+
+[anOutlierDetection.eClass().eSuperTypes.siblings(EClass)->select(name='OverSampling').name.concat('=')/][anOutlierDetection.eClass().eSuperTypes.eSuperTypes.siblings(EEnum)->select(name='Oversampling_technique').eLiterals->select(name='SMOTE').name.concat('(')/][anOutlierDetection.eClass().eSuperTypes.siblings(EClass)->select(name='Sampling').eAttributes->select(name='random_state').name.concat('=0').concat(')')/]
+[anOutlierDetection.eClass().eSuperTypes.siblings(EClass)->select(name='OverSampling').name.prefix('x2, y2 =').concat('.')/][anOutlierDetection.eClass().eSuperTypes.siblings(EClass)->select(name='Sampling').eOperations->select(name='fit_resample').name.concat('(X,Y)')/]
+[/file]
+[/template]
+[template public generateElement(aboxplot : boxplot)]
+[comment @main/]
+[aboxplot.eClass().eAttributes->select(name='whisker_width').name.concat('=')/][aboxplot.whisker_width/]
+[aboxplot.eClass().eAttributes->select(name='lower_whisker').name.concat('=')/][aboxplot.lower_whisker/]
+[aboxplot.eClass().eAttributes->select(name='upper_whisker').name.concat('=')/][aboxplot.upper_whisker/]
+[/template]
+
+[template public generateupper_whisker(aboxplot : boxplot)]
+[comment @main/]
+[aboxplot.eClass().eAttributes->select(name='upper_whisker').name/]
+[/template]
+
+[template public generatelower_whisker(aboxplot : boxplot)]
+[comment @main/]
+[aboxplot.eClass().eAttributes->select(name='lower_whisker').name/]
+[/template]

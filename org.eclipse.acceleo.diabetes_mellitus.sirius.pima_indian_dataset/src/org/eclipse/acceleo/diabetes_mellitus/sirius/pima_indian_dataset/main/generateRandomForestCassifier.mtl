@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module generateRandomForestCassifier('http://www.example.org/ssda_research')]
+
+
+[template public generateRandomForestCassifier(aRandomForestClassifier : RandomForestClassifier)]
+[comment @main/]
+[file (aRandomForestClassifier.eClass().name.concat('.ipynb'), false, 'UTF-8')]
+[aRandomForestClassifier.cv.eClass()->select(name='KFold').name.concat('_rf').concat('=')/][aRandomForestClassifier.cv.eClass()->select(name='KFold').name.concat('(')/][aRandomForestClassifier.cv.eClass()->select(name='KFold').eAttributes.name.concat('=').concat('4').concat(',')/][aRandomForestClassifier.eClass().eSuperTypes.eAttributes.name.concat('=').concat('3').concat(',')/][aRandomForestClassifier.cv.eClass().eSuperTypes.eAttributes->select(name='shuffle').name.concat('=').concat('True').concat(')')/]
+[aRandomForestClassifier.eClass().name.concat('=')/][aRandomForestClassifier.eClass()->select(name='RandomForestClassifier').name/][aRandomForestClassifier.eClass().eSuperTypes.eAttributes.name.prefix('(').concat('=13').concat(')')/]
+[aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='accuracy_score').name.concat('_rf').concat('=')/][aRandomForestClassifier.cv.eClass()->select(name='KFold').eSuperTypes.eOperations->select(name='cross_val_score').name.concat('(')/][aRandomForestClassifier.eClass().name.concat(',').concat('x2').concat(',').concat('y2').concat(',')/][aRandomForestClassifier.cv.eClass().eSuperTypes.eAttributes->select(name='cv').name.concat('=')/][aRandomForestClassifier.cv.eClass()->select(name='KFold').name.concat('_rf').concat(')')/]
+[aRandomForestClassifier.eClass().eSuperTypes.siblings(EClass)->select(name='Performance_Evaluation').eOperations->select(name='accuracy_score').name.prefix('print("Accuracy of Random Forest classifier",').concat('_rf').concat('.').concat('mean').concat('()')/]
+[aRandomForestClassifier.eClass().eSuperTypes.eReferences.eReferenceType->select(name='DiabetesPrediction').name.concat('_rf').concat('=')/][aRandomForestClassifier.cv.eClass()->select(name='KFold').eSuperTypes.eOperations->select(name='cross_val_predict').name.concat('(')/][aRandomForestClassifier.eClass().name.concat(',').concat('x2').concat(',').concat('y2').concat(',')/][aRandomForestClassifier.cv.eClass().eSuperTypes.eAttributes->select(name='cv').name.concat('=')/][aRandomForestClassifier.cv.eClass()->select(name='KFold').name.concat('_rf').concat(')')/]
+[aRandomForestClassifier.pred.evaluated.eClass().eOperations->select(name='accuracy_score').name.concat('(')/][aRandomForestClassifier.pred.eClass().name.concat('_rf').concat(',').concat('y2').concat(')')/]
+[/file]
+[/template]

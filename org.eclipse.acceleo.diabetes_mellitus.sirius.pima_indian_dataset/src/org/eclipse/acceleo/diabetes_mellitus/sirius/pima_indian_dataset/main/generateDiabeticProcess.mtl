@@ -1,0 +1,70 @@
+[comment encoding = UTF-8 /]
+[module generateDiabeticProcess('http://www.example.org/ssda_research')]
+[template public generateDiabeticProcess(aDiabeticRecommendationSystem : DiabeticRecommendationSystem)]
+[comment @main/]
+[file (aDiabeticRecommendationSystem.eClass().name.concat('.ipynb'), false, 'UTF-8')]
+import pandas as pd
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+from imblearn.over_sampling import [aDiabeticRecommendationSystem.eClass().siblings(EEnum)->select(name='Oversampling_technique').eLiterals->select(name='SMOTE')/]
+from sklearn.naive_bayes import [aDiabeticRecommendationSystem.estimators.eClass()->select(name='GaussianNB').name/]
+from sklearn.ensemble import [aDiabeticRecommendationSystem.estimators.eClass()->select(name='RandomForestClassifier').name.concat(',')/][aDiabeticRecommendationSystem.estimators.eClass()->select(name='GradientBoostingClassifier').name.concat(',')/][aDiabeticRecommendationSystem.estimators.eClass()->select(name='VotingClassifier').name/]
+from sklearn.model_selection import [aDiabeticRecommendationSystem.cv.eClass().eSuperTypes.eOperations->select(name='cross_val_score').name.concat(',')/][aDiabeticRecommendationSystem.cv.eClass().eSuperTypes.eOperations->select(name='cross_val_predict').name.concat(',')/][aDiabeticRecommendationSystem.cv.eClass()->select(name='KFold').name/]
+from sklearn.metrics import [aDiabeticRecommendationSystem.pred.evaluated.eClass().eOperations->select(name='confusion_matrix').name.concat(',')/][aDiabeticRecommendationSystem.pred.evaluated.eClass().eOperations->select(name='accuracy_score').name.concat(',')/][aDiabeticRecommendationSystem.pred.evaluated.eClass().eOperations->select(name='classification_report').name/]
+[aDiabeticRecommendationSystem.dataset.eClass().name.concat('=')/]pd.[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='DatasetDeclaration').eOperations->select(name='read_csv').name->asSet().concat('(').concat('"drive/My Drive/Colab Notebooks/diabetes.')/][aDiabeticRecommendationSystem.dataset.type.concat('"').concat(')')/]
+[aDiabeticRecommendationSystem.dataset.eClass().name.concat('.')/][aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='DatasetDeclaration').eOperations->select(name='head').name.concat('()')->asSet()/]
+[aDiabeticRecommendationSystem.dataset.eClass().name.concat('.')/][aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='DatasetDeclaration').eOperations->select(name='dtypes').name.concat('()')->asSet()/]
+[aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('if(').concat('.')/][aDiabeticRecommendationSystem.dpreprocess.eClass().siblings(EClass)->select(name='MissingValues').eOperations->select(name='isnull').name.concat(')')->asSet().concat(':').concat('\n').concat('{')/]
+[aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('print ("Missing values in the dataset",').concat('.')/][aDiabeticRecommendationSystem.dpreprocess.eClass().siblings(EClass)->select(name='MissingValues').eOperations->select(name='isnull').name.concat('()')->asSet().concat('.sum()').concat(')').concat('\n').concat('}').concat('\n').concat('else').concat(':').concat('\n').concat('{')/]
+[aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('print("Missing values in the dataset",').concat('.')/][aDiabeticRecommendationSystem.dpreprocess.eClass().siblings(EClass)->select(name='MissingValues').eOperations->select(name='isnull').name.concat('()')->asSet().concat('.sum()').concat(')').concat('\n').concat('}')/]
+
+
+ax,fig = plt.subplots(figsize=(15,8))
+sns.heatmap([aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('(').concat('.')/][aDiabeticRecommendationSystem.dpreprocess.eClass().siblings(EClass)->select(name='FeaturesSelection').siblings(EClass)->select(name='Pearson_Correlation').eOperations->select(name='corr').name->asSet().concat('()').concat(',').concat('annot=True)')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='boxplot').name->asSet().prefix('sns.').concat('(').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(',')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('x=').concat('["')/][aDiabeticRecommendationSystem.dataset.accessible_to.symptom_name->closure('Pregnancies').concat('"]').concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Boxplot of Pregnancies Column")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='boxplot').name->asSet().prefix('sns.').concat('(').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(',')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('x=').concat('["')/][aDiabeticRecommendationSystem.symp.symptom_name->closure('Glucose').concat('"]').concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Boxplot of Glucose Column")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='boxplot').name->asSet().prefix('sns.').concat('(').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(',')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('x=').concat('["')/][aDiabeticRecommendationSystem.symp.symptom_name->closure('BloodPressure').concat('"]').concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Boxplot of BloodPressure Column")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='boxplot').name->asSet().prefix('sns.').concat('(').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(',')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('x=').concat('["')/][aDiabeticRecommendationSystem.symp.symptom_name->closure('Skinthickness').concat('"]').concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Boxplot of Skinthickness Column")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='boxplot').name->asSet().prefix('sns.').concat('(').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(',')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('x=').concat('["')/][aDiabeticRecommendationSystem.symp.symptom_name->closure('DiabetesPedigreeFunction').concat('"]').concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Boxplot of DiabetesPedigreeFunction Column")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='boxplot').name->asSet().prefix('sns.').concat('(').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(',')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('x=').concat('["')/][aDiabeticRecommendationSystem.patient.eClass().eAttributes->select(name='bmi').name->asSet().concat('"]').concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Boxplot of BMI Column")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='boxplot').name->asSet().prefix('sns.').concat('(').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(',')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().prefix('x=').concat('["')/][aDiabeticRecommendationSystem.patient.eClass().eAttributes->select(name='age').name->asSet().concat('"]').concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Boxplot of Age Column")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='scatter').name->asSet().prefix('plt.').concat('(').concat('x="Glucose"').concat(',').concat('y=')/][aDiabeticRecommendationSystem.pred.eClass().eAttributes->select(name='outcome').name.concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Scatter Plot with Linear fit")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='scatter').name->asSet().prefix('plt.').concat('(').concat('x="BloodPressure"').concat(',').concat('y=')/] [aDiabeticRecommendationSystem.pred.eClass().eAttributes->select(name='outcome').name.concat(',').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Scatter Plot with Linear fit")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='scatter').name->asSet().prefix('plt.').concat('(').concat('x="SkinThickness"').concat(',').concat('y=')/] [aDiabeticRecommendationSystem.pred.eClass().eAttributes->select(name='outcome').name.concat(',').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Scatter Plot with Linear fit")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='scatter').name->asSet().prefix('plt.').concat('(').concat('x="Insulin"').concat(',').concat('y=')/] [aDiabeticRecommendationSystem.pred.eClass().eAttributes->select(name='outcome').name.concat(',').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Scatter Plot with Linear fit")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='scatter').name->asSet().prefix('plt.').concat('(').concat('x="BMI"').concat(',').concat('y=')/] [aDiabeticRecommendationSystem.pred.eClass().eAttributes->select(name='outcome').name.concat(',').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Scatter Plot with Linear fit")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='scatter').name->asSet().prefix('plt.').concat('(').concat('x="DiabetesPedigreeFunction"').concat(',').concat('y=')/] [aDiabeticRecommendationSystem.pred.eClass().eAttributes->select(name='outcome').name.concat(',').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Scatter Plot with Linear fit")')/]
+
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='scatter').name->asSet().prefix('plt.').concat('(').concat('x="Age"').concat(',').concat('y=')/] [aDiabeticRecommendationSystem.pred.eClass().eAttributes->select(name='outcome').name.concat(',').concat('data=')/][aDiabeticRecommendationSystem.dataset.eClass().name->asSet().concat(')')/]
+[aDiabeticRecommendationSystem.eda.eClass().siblings(EClass)->select(name='Plot').eAttributes->select(name='title').name->asSet().prefix('plt.').concat('("Scatter Plot with Linear fit")')/]
+
+
+[/file]
+[/template]

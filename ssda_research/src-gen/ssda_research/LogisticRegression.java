@@ -11,9 +11,9 @@ package ssda_research;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ssda_research.LogisticRegression#getSolvers <em>Solvers</em>}</li>
+ *   <li>{@link ssda_research.LogisticRegression#getSolver <em>Solver</em>}</li>
  *   <li>{@link ssda_research.LogisticRegression#getPenalty <em>Penalty</em>}</li>
- *   <li>{@link ssda_research.LogisticRegression#getC_values <em>Cvalues</em>}</li>
+ *   <li>{@link ssda_research.LogisticRegression#getC <em>C</em>}</li>
  * </ul>
  *
  * @see ssda_research.Ssda_researchPackage#getLogisticRegression()
@@ -22,26 +22,26 @@ package ssda_research;
  */
 public interface LogisticRegression extends classifiers {
 	/**
-	 * Returns the value of the '<em><b>Solvers</b></em>' attribute.
+	 * Returns the value of the '<em><b>Solver</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Solvers</em>' attribute.
-	 * @see #setSolvers(String)
-	 * @see ssda_research.Ssda_researchPackage#getLogisticRegression_Solvers()
+	 * @return the value of the '<em>Solver</em>' attribute.
+	 * @see #setSolver(String)
+	 * @see ssda_research.Ssda_researchPackage#getLogisticRegression_Solver()
 	 * @model
 	 * @generated
 	 */
-	String getSolvers();
+	String getSolver();
 
 	/**
-	 * Sets the value of the '{@link ssda_research.LogisticRegression#getSolvers <em>Solvers</em>}' attribute.
+	 * Sets the value of the '{@link ssda_research.LogisticRegression#getSolver <em>Solver</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Solvers</em>' attribute.
-	 * @see #getSolvers()
+	 * @param value the new value of the '<em>Solver</em>' attribute.
+	 * @see #getSolver()
 	 * @generated
 	 */
-	void setSolvers(String value);
+	void setSolver(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Penalty</b></em>' attribute.
@@ -69,25 +69,25 @@ public interface LogisticRegression extends classifiers {
 	void setPenalty(Regularization value);
 
 	/**
-	 * Returns the value of the '<em><b>Cvalues</b></em>' attribute.
+	 * Returns the value of the '<em><b>C</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cvalues</em>' attribute.
-	 * @see #setC_values(String)
-	 * @see ssda_research.Ssda_researchPackage#getLogisticRegression_C_values()
+	 * @return the value of the '<em>C</em>' attribute.
+	 * @see #setC(String)
+	 * @see ssda_research.Ssda_researchPackage#getLogisticRegression_C()
 	 * @model
 	 * @generated
 	 */
-	String getC_values();
+	String getC();
 
 	/**
-	 * Sets the value of the '{@link ssda_research.LogisticRegression#getC_values <em>Cvalues</em>}' attribute.
+	 * Sets the value of the '{@link ssda_research.LogisticRegression#getC <em>C</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cvalues</em>' attribute.
-	 * @see #getC_values()
+	 * @param value the new value of the '<em>C</em>' attribute.
+	 * @see #getC()
 	 * @generated
 	 */
-	void setC_values(String value);
+	void setC(String value);
 
 } // LogisticRegression

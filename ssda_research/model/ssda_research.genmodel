@@ -154,9 +154,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//SVC/C"/>
     </genClasses>
     <genClasses ecoreClass="ssda_research.ecore#//LogisticRegression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//LogisticRegression/solvers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//LogisticRegression/solver"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//LogisticRegression/penalty"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//LogisticRegression/c_values"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//LogisticRegression/C"/>
     </genClasses>
     <genClasses ecoreClass="ssda_research.ecore#//KNeighborsClassifier">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//KNeighborsClassifier/metric"/>

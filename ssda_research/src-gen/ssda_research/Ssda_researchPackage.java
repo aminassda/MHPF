@@ -1829,13 +1829,13 @@ public interface Ssda_researchPackage extends EPackage {
 	int LOGISTIC_REGRESSION__RANDOM_STATE = CLASSIFIERS__RANDOM_STATE;
 
 	/**
-	 * The feature id for the '<em><b>Solvers</b></em>' attribute.
+	 * The feature id for the '<em><b>Solver</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGISTIC_REGRESSION__SOLVERS = CLASSIFIERS_FEATURE_COUNT + 0;
+	int LOGISTIC_REGRESSION__SOLVER = CLASSIFIERS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Penalty</b></em>' attribute.
@@ -1847,13 +1847,13 @@ public interface Ssda_researchPackage extends EPackage {
 	int LOGISTIC_REGRESSION__PENALTY = CLASSIFIERS_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Cvalues</b></em>' attribute.
+	 * The feature id for the '<em><b>C</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGISTIC_REGRESSION__CVALUES = CLASSIFIERS_FEATURE_COUNT + 2;
+	int LOGISTIC_REGRESSION__C = CLASSIFIERS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Logistic Regression</em>' class.
@@ -5336,15 +5336,15 @@ public interface Ssda_researchPackage extends EPackage {
 	EClass getLogisticRegression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ssda_research.LogisticRegression#getSolvers <em>Solvers</em>}'.
+	 * Returns the meta object for the attribute '{@link ssda_research.LogisticRegression#getSolver <em>Solver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Solvers</em>'.
-	 * @see ssda_research.LogisticRegression#getSolvers()
+	 * @return the meta object for the attribute '<em>Solver</em>'.
+	 * @see ssda_research.LogisticRegression#getSolver()
 	 * @see #getLogisticRegression()
 	 * @generated
 	 */
-	EAttribute getLogisticRegression_Solvers();
+	EAttribute getLogisticRegression_Solver();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ssda_research.LogisticRegression#getPenalty <em>Penalty</em>}'.
@@ -5358,15 +5358,15 @@ public interface Ssda_researchPackage extends EPackage {
 	EAttribute getLogisticRegression_Penalty();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ssda_research.LogisticRegression#getC_values <em>Cvalues</em>}'.
+	 * Returns the meta object for the attribute '{@link ssda_research.LogisticRegression#getC <em>C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cvalues</em>'.
-	 * @see ssda_research.LogisticRegression#getC_values()
+	 * @return the meta object for the attribute '<em>C</em>'.
+	 * @see ssda_research.LogisticRegression#getC()
 	 * @see #getLogisticRegression()
 	 * @generated
 	 */
-	EAttribute getLogisticRegression_C_values();
+	EAttribute getLogisticRegression_C();
 
 	/**
 	 * Returns the meta object for class '{@link ssda_research.KNeighborsClassifier <em>KNeighbors Classifier</em>}'.
@@ -7306,12 +7306,12 @@ public interface Ssda_researchPackage extends EPackage {
 		EClass LOGISTIC_REGRESSION = eINSTANCE.getLogisticRegression();
 
 		/**
-		 * The meta object literal for the '<em><b>Solvers</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Solver</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LOGISTIC_REGRESSION__SOLVERS = eINSTANCE.getLogisticRegression_Solvers();
+		EAttribute LOGISTIC_REGRESSION__SOLVER = eINSTANCE.getLogisticRegression_Solver();
 
 		/**
 		 * The meta object literal for the '<em><b>Penalty</b></em>' attribute feature.
@@ -7322,12 +7322,12 @@ public interface Ssda_researchPackage extends EPackage {
 		EAttribute LOGISTIC_REGRESSION__PENALTY = eINSTANCE.getLogisticRegression_Penalty();
 
 		/**
-		 * The meta object literal for the '<em><b>Cvalues</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>C</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LOGISTIC_REGRESSION__CVALUES = eINSTANCE.getLogisticRegression_C_values();
+		EAttribute LOGISTIC_REGRESSION__C = eINSTANCE.getLogisticRegression_C();
 
 		/**
 		 * The meta object literal for the '{@link ssda_research.impl.KNeighborsClassifierImpl <em>KNeighbors Classifier</em>}' class.

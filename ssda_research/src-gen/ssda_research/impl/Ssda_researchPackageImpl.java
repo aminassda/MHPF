@@ -1645,7 +1645,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLogisticRegression_Solvers() {
+	public EAttribute getLogisticRegression_Solver() {
 		return (EAttribute) logisticRegressionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1665,7 +1665,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLogisticRegression_C_values() {
+	public EAttribute getLogisticRegression_C() {
 		return (EAttribute) logisticRegressionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2778,9 +2778,9 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		createEAttribute(svcEClass, SVC__C);
 
 		logisticRegressionEClass = createEClass(LOGISTIC_REGRESSION);
-		createEAttribute(logisticRegressionEClass, LOGISTIC_REGRESSION__SOLVERS);
+		createEAttribute(logisticRegressionEClass, LOGISTIC_REGRESSION__SOLVER);
 		createEAttribute(logisticRegressionEClass, LOGISTIC_REGRESSION__PENALTY);
-		createEAttribute(logisticRegressionEClass, LOGISTIC_REGRESSION__CVALUES);
+		createEAttribute(logisticRegressionEClass, LOGISTIC_REGRESSION__C);
 
 		kNeighborsClassifierEClass = createEClass(KNEIGHBORS_CLASSIFIER);
 		createEAttribute(kNeighborsClassifierEClass, KNEIGHBORS_CLASSIFIER__METRIC);
@@ -3250,15 +3250,14 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 
 		initEClass(logisticRegressionEClass, LogisticRegression.class, "LogisticRegression", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLogisticRegression_Solvers(), ecorePackage.getEString(), "solvers", null, 0, 1,
+		initEAttribute(getLogisticRegression_Solver(), ecorePackage.getEString(), "solver", null, 0, 1,
 				LogisticRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLogisticRegression_Penalty(), this.getRegularization(), "penalty", null, 0, 1,
 				LogisticRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLogisticRegression_C_values(), ecorePackage.getEString(), "c_values", null, 0, 1,
-				LogisticRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogisticRegression_C(), ecorePackage.getEString(), "C", null, 0, 1, LogisticRegression.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(kNeighborsClassifierEClass, KNeighborsClassifier.class, "KNeighborsClassifier", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

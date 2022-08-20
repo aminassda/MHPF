@@ -20,33 +20,33 @@ import ssda_research.Ssda_researchPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ssda_research.impl.LogisticRegressionImpl#getSolvers <em>Solvers</em>}</li>
+ *   <li>{@link ssda_research.impl.LogisticRegressionImpl#getSolver <em>Solver</em>}</li>
  *   <li>{@link ssda_research.impl.LogisticRegressionImpl#getPenalty <em>Penalty</em>}</li>
- *   <li>{@link ssda_research.impl.LogisticRegressionImpl#getC_values <em>Cvalues</em>}</li>
+ *   <li>{@link ssda_research.impl.LogisticRegressionImpl#getC <em>C</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LogisticRegressionImpl extends classifiersImpl implements LogisticRegression {
 	/**
-	 * The default value of the '{@link #getSolvers() <em>Solvers</em>}' attribute.
+	 * The default value of the '{@link #getSolver() <em>Solver</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSolvers()
+	 * @see #getSolver()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SOLVERS_EDEFAULT = null;
+	protected static final String SOLVER_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSolvers() <em>Solvers</em>}' attribute.
+	 * The cached value of the '{@link #getSolver() <em>Solver</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSolvers()
+	 * @see #getSolver()
 	 * @generated
 	 * @ordered
 	 */
-	protected String solvers = SOLVERS_EDEFAULT;
+	protected String solver = SOLVER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPenalty() <em>Penalty</em>}' attribute.
@@ -69,24 +69,24 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	protected Regularization penalty = PENALTY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getC_values() <em>Cvalues</em>}' attribute.
+	 * The default value of the '{@link #getC() <em>C</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getC_values()
+	 * @see #getC()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CVALUES_EDEFAULT = null;
+	protected static final String C_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getC_values() <em>Cvalues</em>}' attribute.
+	 * The cached value of the '{@link #getC() <em>C</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getC_values()
+	 * @see #getC()
 	 * @generated
 	 * @ordered
 	 */
-	protected String c_values = CVALUES_EDEFAULT;
+	protected String c = C_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +113,8 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	 * @generated
 	 */
 	@Override
-	public String getSolvers() {
-		return solvers;
+	public String getSolver() {
+		return solver;
 	}
 
 	/**
@@ -123,12 +123,12 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	 * @generated
 	 */
 	@Override
-	public void setSolvers(String newSolvers) {
-		String oldSolvers = solvers;
-		solvers = newSolvers;
+	public void setSolver(String newSolver) {
+		String oldSolver = solver;
+		solver = newSolver;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVERS,
-					oldSolvers, solvers));
+			eNotify(new ENotificationImpl(this, Notification.SET, Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVER,
+					oldSolver, solver));
 	}
 
 	/**
@@ -161,8 +161,8 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	 * @generated
 	 */
 	@Override
-	public String getC_values() {
-		return c_values;
+	public String getC() {
+		return c;
 	}
 
 	/**
@@ -171,12 +171,12 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	 * @generated
 	 */
 	@Override
-	public void setC_values(String newC_values) {
-		String oldC_values = c_values;
-		c_values = newC_values;
+	public void setC(String newC) {
+		String oldC = c;
+		c = newC;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ssda_researchPackage.LOGISTIC_REGRESSION__CVALUES,
-					oldC_values, c_values));
+			eNotify(new ENotificationImpl(this, Notification.SET, Ssda_researchPackage.LOGISTIC_REGRESSION__C, oldC,
+					c));
 	}
 
 	/**
@@ -187,12 +187,12 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVERS:
-			return getSolvers();
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVER:
+			return getSolver();
 		case Ssda_researchPackage.LOGISTIC_REGRESSION__PENALTY:
 			return getPenalty();
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__CVALUES:
-			return getC_values();
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__C:
+			return getC();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,14 +205,14 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVERS:
-			setSolvers((String) newValue);
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVER:
+			setSolver((String) newValue);
 			return;
 		case Ssda_researchPackage.LOGISTIC_REGRESSION__PENALTY:
 			setPenalty((Regularization) newValue);
 			return;
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__CVALUES:
-			setC_values((String) newValue);
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__C:
+			setC((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +226,14 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVERS:
-			setSolvers(SOLVERS_EDEFAULT);
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVER:
+			setSolver(SOLVER_EDEFAULT);
 			return;
 		case Ssda_researchPackage.LOGISTIC_REGRESSION__PENALTY:
 			setPenalty(PENALTY_EDEFAULT);
 			return;
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__CVALUES:
-			setC_values(CVALUES_EDEFAULT);
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__C:
+			setC(C_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +247,12 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVERS:
-			return SOLVERS_EDEFAULT == null ? solvers != null : !SOLVERS_EDEFAULT.equals(solvers);
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVER:
+			return SOLVER_EDEFAULT == null ? solver != null : !SOLVER_EDEFAULT.equals(solver);
 		case Ssda_researchPackage.LOGISTIC_REGRESSION__PENALTY:
 			return penalty != PENALTY_EDEFAULT;
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__CVALUES:
-			return CVALUES_EDEFAULT == null ? c_values != null : !CVALUES_EDEFAULT.equals(c_values);
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__C:
+			return C_EDEFAULT == null ? c != null : !C_EDEFAULT.equals(c);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,12 +268,12 @@ public class LogisticRegressionImpl extends classifiersImpl implements LogisticR
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (solvers: ");
-		result.append(solvers);
+		result.append(" (solver: ");
+		result.append(solver);
 		result.append(", penalty: ");
 		result.append(penalty);
-		result.append(", c_values: ");
-		result.append(c_values);
+		result.append(", C: ");
+		result.append(c);
 		result.append(')');
 		return result.toString();
 	}

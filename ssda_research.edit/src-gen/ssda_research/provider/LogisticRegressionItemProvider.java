@@ -44,26 +44,26 @@ public class LogisticRegressionItemProvider extends classifiersItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSolversPropertyDescriptor(object);
+			addSolverPropertyDescriptor(object);
 			addPenaltyPropertyDescriptor(object);
-			addC_valuesPropertyDescriptor(object);
+			addCPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Solvers feature.
+	 * This adds a property descriptor for the Solver feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSolversPropertyDescriptor(Object object) {
+	protected void addSolverPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_LogisticRegression_solvers_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_LogisticRegression_solvers_feature",
+				getString("_UI_LogisticRegression_solver_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LogisticRegression_solver_feature",
 						"_UI_LogisticRegression_type"),
-				Ssda_researchPackage.Literals.LOGISTIC_REGRESSION__SOLVERS, true, false, false,
+				Ssda_researchPackage.Literals.LOGISTIC_REGRESSION__SOLVER, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -84,19 +84,19 @@ public class LogisticRegressionItemProvider extends classifiersItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Cvalues feature.
+	 * This adds a property descriptor for the C feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addC_valuesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_LogisticRegression_c_values_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_LogisticRegression_c_values_feature",
-						"_UI_LogisticRegression_type"),
-				Ssda_researchPackage.Literals.LOGISTIC_REGRESSION__CVALUES, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addCPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_LogisticRegression_C_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_LogisticRegression_C_feature",
+								"_UI_LogisticRegression_type"),
+						Ssda_researchPackage.Literals.LOGISTIC_REGRESSION__C, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -145,9 +145,9 @@ public class LogisticRegressionItemProvider extends classifiersItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LogisticRegression.class)) {
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVERS:
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__SOLVER:
 		case Ssda_researchPackage.LOGISTIC_REGRESSION__PENALTY:
-		case Ssda_researchPackage.LOGISTIC_REGRESSION__CVALUES:
+		case Ssda_researchPackage.LOGISTIC_REGRESSION__C:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

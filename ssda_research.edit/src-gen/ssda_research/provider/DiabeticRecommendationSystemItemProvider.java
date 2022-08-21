@@ -72,7 +72,7 @@ public class DiabeticRecommendationSystemItemProvider extends ItemProviderAdapte
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__PATIENT);
 			childrenFeatures.add(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__SYMP);
-			childrenFeatures.add(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__MED);
+			childrenFeatures.add(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__DRUG);
 			childrenFeatures.add(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR);
 			childrenFeatures.add(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__PRED);
 			childrenFeatures.add(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__DATASET);
@@ -144,7 +144,7 @@ public class DiabeticRecommendationSystemItemProvider extends ItemProviderAdapte
 		switch (notification.getFeatureID(DiabeticRecommendationSystem.class)) {
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__PATIENT:
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__SYMP:
-		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__MED:
+		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DRUG:
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR:
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__PRED:
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DATASET:
@@ -177,8 +177,11 @@ public class DiabeticRecommendationSystemItemProvider extends ItemProviderAdapte
 		newChildDescriptors.add(createChildParameter(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__SYMP,
 				Ssda_researchFactory.eINSTANCE.createSymptoms()));
 
-		newChildDescriptors.add(createChildParameter(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__MED,
-				Ssda_researchFactory.eINSTANCE.createMedicines()));
+		newChildDescriptors.add(createChildParameter(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__DRUG,
+				Ssda_researchFactory.eINSTANCE.createOral_drugs()));
+
+		newChildDescriptors.add(createChildParameter(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__DRUG,
+				Ssda_researchFactory.eINSTANCE.createNonoral_Drugs()));
 
 		newChildDescriptors
 				.add(createChildParameter(Ssda_researchPackage.Literals.DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR,

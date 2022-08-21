@@ -63,9 +63,10 @@ public class PatientItemProvider extends ItemProviderAdapter implements IEditing
 			addAgePropertyDescriptor(object);
 			addOther_diseasesPropertyDescriptor(object);
 			addSympPropertyDescriptor(object);
-			addMedPropertyDescriptor(object);
+			addDrugPropertyDescriptor(object);
 			addDoctorPropertyDescriptor(object);
 			addView_predPropertyDescriptor(object);
+			addFamily_historyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -226,17 +227,17 @@ public class PatientItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This adds a property descriptor for the Med feature.
+	 * This adds a property descriptor for the Drug feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMedPropertyDescriptor(Object object) {
+	protected void addDrugPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Patient_med_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Patient_med_feature", "_UI_Patient_type"),
-						Ssda_researchPackage.Literals.PATIENT__MED, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Patient_drug_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Patient_drug_feature", "_UI_Patient_type"),
+						Ssda_researchPackage.Literals.PATIENT__DRUG, true, false, true, null, null, null));
 	}
 
 	/**
@@ -267,6 +268,22 @@ public class PatientItemProvider extends ItemProviderAdapter implements IEditing
 						getString("_UI_PropertyDescriptor_description", "_UI_Patient_view_pred_feature",
 								"_UI_Patient_type"),
 						Ssda_researchPackage.Literals.PATIENT__VIEW_PRED, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Family history feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFamily_historyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Patient_family_history_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Patient_family_history_feature",
+								"_UI_Patient_type"),
+						Ssda_researchPackage.Literals.PATIENT__FAMILY_HISTORY, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -324,6 +341,7 @@ public class PatientItemProvider extends ItemProviderAdapter implements IEditing
 		case Ssda_researchPackage.PATIENT__PATIENT_TYPE:
 		case Ssda_researchPackage.PATIENT__AGE:
 		case Ssda_researchPackage.PATIENT__OTHER_DISEASES:
+		case Ssda_researchPackage.PATIENT__FAMILY_HISTORY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

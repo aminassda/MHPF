@@ -142,29 +142,6 @@ public class Ssda_researchItemProviderAdapterFactory extends Ssda_researchAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ssda_research.Medicines} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MedicinesItemProvider medicinesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ssda_research.Medicines}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMedicinesAdapter() {
-		if (medicinesItemProvider == null) {
-			medicinesItemProvider = new MedicinesItemProvider(this);
-		}
-
-		return medicinesItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link ssda_research.Doctor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -392,6 +369,52 @@ public class Ssda_researchItemProviderAdapterFactory extends Ssda_researchAdapte
 		}
 
 		return decisionTreeClassifierItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link ssda_research.Oral_drugs} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Oral_drugsItemProvider oral_drugsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ssda_research.Oral_drugs}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOral_drugsAdapter() {
+		if (oral_drugsItemProvider == null) {
+			oral_drugsItemProvider = new Oral_drugsItemProvider(this);
+		}
+
+		return oral_drugsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link ssda_research.Nonoral_Drugs} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Nonoral_DrugsItemProvider nonoral_DrugsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ssda_research.Nonoral_Drugs}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNonoral_DrugsAdapter() {
+		if (nonoral_DrugsItemProvider == null) {
+			nonoral_DrugsItemProvider = new Nonoral_DrugsItemProvider(this);
+		}
+
+		return nonoral_DrugsItemProvider;
 	}
 
 	/**
@@ -1011,8 +1034,6 @@ public class Ssda_researchItemProviderAdapterFactory extends Ssda_researchAdapte
 			patientItemProvider.dispose();
 		if (symptomsItemProvider != null)
 			symptomsItemProvider.dispose();
-		if (medicinesItemProvider != null)
-			medicinesItemProvider.dispose();
 		if (doctorItemProvider != null)
 			doctorItemProvider.dispose();
 		if (diabetesPredictionItemProvider != null)
@@ -1077,6 +1098,10 @@ public class Ssda_researchItemProviderAdapterFactory extends Ssda_researchAdapte
 			preprocessed_dataItemProvider.dispose();
 		if (decisionTreeClassifierItemProvider != null)
 			decisionTreeClassifierItemProvider.dispose();
+		if (oral_drugsItemProvider != null)
+			oral_drugsItemProvider.dispose();
+		if (nonoral_DrugsItemProvider != null)
+			nonoral_DrugsItemProvider.dispose();
 	}
 
 }

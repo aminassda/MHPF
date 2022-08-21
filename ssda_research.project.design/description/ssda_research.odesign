@@ -5,169 +5,181 @@
       <metamodel href="http://www.example.org/ssda_research#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="PatientNode" semanticCandidatesExpression="feature:patient" domainClass="ssda_research::Patient">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Patient.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Patient.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Medicine" semanticCandidatesExpression="feature:med" domainClass="ssda_research::Medicines">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="feature:medicine_name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Medicines.png">
+        <nodeMappings name="OralDrug" semanticCandidatesExpression="feature:drug" domainClass="ssda_research::Oral_drugs">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="feature:drug_name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Oral_drugs.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NonOralDrug" semanticCandidatesExpression="feature:drug" domainClass="ssda_research::Nonoral_Drugs">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="feature:drug_name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Nonoral_Drugs.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Symptoms" semanticCandidatesExpression="feature:symp" domainClass="ssda_research::Symptoms">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="feature:symptom_name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Symptoms.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="feature:symptom_name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Symptoms.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Doctor" semanticCandidatesExpression="feature:doctor" domainClass="ssda_research::Doctor">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Doctor.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Doctor.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Diabetes Prediction" semanticCandidatesExpression="feature:pred" domainClass="ssda_research::DiabetesPrediction">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DiabetesPrediction.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DiabetesPrediction.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Dataset" semanticCandidatesExpression="feature:dataset" domainClass="ssda_research::Dataset">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Dataset.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Dataset.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Random Forest Classifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::RandomForestClassifier">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/RandomForestClassifier.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/RandomForestClassifier.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="MLPClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::MLPClassifier">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/MLPClassifier.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/MLPClassifier.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="GradientBoostingClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::GradientBoostingClassifier">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GradientBoostingClassifier.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GradientBoostingClassifier.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Gaussian Navie Bayes" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::GaussianNB">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GaussianNB.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GaussianNB.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Support Vector Classifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::SVC">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/SVC.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/SVC.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Logistic Regression" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::LogisticRegression">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/LogisticRegression.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/LogisticRegression.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="KNeighborsClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::KNeighborsClassifier">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/KNeighborsClassifier.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/KNeighborsClassifier.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="VotingClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::VotingClassifier">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/VotingClassifier.png">
+          <borderedNodeMappings name="VotingClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::VotingClassifier">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/VotingClassifier.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/VotingClassifier.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="DecisionTreeClassifier" semanticCandidatesExpression="feature:estimators" domainClass="ssda_research::DecisionTreeClassifier">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DecisionTreeClassifier.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DecisionTreeClassifier.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="GridSearchCV" semanticCandidatesExpression="feature:model_op" domainClass="ssda_research::GridSearchCV">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GridSearchCV.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/GridSearchCV.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Pearson Correlation" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::Pearson_Correlation">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Pearson_Correlation.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Pearson_Correlation.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="MissingValues" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::MissingValues">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/MissingValues.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/MissingValues.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="LabelEncoding" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::LabelEncoding">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/BinaryLabels.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/BinaryLabels.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="StandardScaler" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::StandardScaler">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Numeric_Outlier.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Numeric_Outlier.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="NumericOutlier" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::Numeric_Outlier">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Numeric_Outlier.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Numeric_Outlier.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Undersampling" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::Undersampling">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Undersampling.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Undersampling.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Oversampling" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::OverSampling">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/OverSampling.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/OverSampling.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="HybridSamplingMethod" semanticCandidatesExpression="feature:dpreprocess" domainClass="ssda_research::Hybrid_Method">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Hybrid_Method.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/Hybrid_Method.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="KFoldcross  validation" semanticCandidatesExpression="feature:cv" domainClass="ssda_research::KFold">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/KFold.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/KFold.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="TrainTestSplit" semanticCandidatesExpression="feature:cv" domainClass="ssda_research::TrainTestSplit">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/TrainTestSplit.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/TrainTestSplit.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Dataset_Declaration" semanticCandidatesExpression="feature:eda" domainClass="ssda_research::DatasetDeclaration">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DatasetDeclaration.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/DatasetDeclaration.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="boxplot" semanticCandidatesExpression="feature:eda" domainClass="ssda_research::boxplot">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/boxplot.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="aql:self.eClass().name" resizeKind="NSEW" workspacePath="/ssda_research.project.design/icons/boxplot.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -200,7 +212,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Patient-Medicines" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='PatientNode']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Medicine']" targetFinderExpression="feature:med">
+        <edgeMappings name="Patient-Drug" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='PatientNode']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='OralDrug'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='NonOralDrug']" targetFinderExpression="feature:drug">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -224,7 +236,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Doctor-Medicines" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Doctor']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Medicine']" targetFinderExpression="feature:recommend_med">
+        <edgeMappings name="Doctor-Drug" sourceMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Doctor']" targetMapping="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='OralDrug'] //@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='NonOralDrug']" targetFinderExpression="feature:recommend_drug">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -359,13 +371,24 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Medicines" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='Medicine']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create OralDrug" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='OralDrug']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Medicines" referenceName="medicines">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="medicine_name"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Oral_drugs" referenceName="drug">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="drug_name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create NonOralDrug" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@nodeMappings[name='NonOralDrug']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssda_research::Nonoral_Drugs" referenceName="drug">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="drug_name"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -687,14 +710,14 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Patient-Medicines" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Patient-Medicines']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Patient-Drug" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Patient-Drug']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="med" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="drug" valueExpression="feature:drug"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -720,13 +743,13 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Doctor-Mediines" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Doctor-Medicines']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Doctor-Drug" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Doctor-Drug']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="recommend_med" valueExpression="var:target"/>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="recommend_drug" valueExpression="var:target"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:EdgeCreationDescription" name="Doctor-Prediction" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='diabetes_plan']/@ownedRepresentations[name='ssda_research']/@defaultLayer/@edgeMappings[name='Doctor-Prediction']">

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import ssda_research.DiabetesPrediction;
 import ssda_research.Doctor;
-import ssda_research.Medicines;
+import ssda_research.Drug;
 import ssda_research.Patient;
 import ssda_research.Ssda_researchPackage;
 import ssda_research.Symptoms;
@@ -44,9 +44,10 @@ import ssda_research.Symptoms;
  *   <li>{@link ssda_research.impl.PatientImpl#getAge <em>Age</em>}</li>
  *   <li>{@link ssda_research.impl.PatientImpl#getOther_diseases <em>Other diseases</em>}</li>
  *   <li>{@link ssda_research.impl.PatientImpl#getSymp <em>Symp</em>}</li>
- *   <li>{@link ssda_research.impl.PatientImpl#getMed <em>Med</em>}</li>
+ *   <li>{@link ssda_research.impl.PatientImpl#getDrug <em>Drug</em>}</li>
  *   <li>{@link ssda_research.impl.PatientImpl#getDoctor <em>Doctor</em>}</li>
  *   <li>{@link ssda_research.impl.PatientImpl#getView_pred <em>View pred</em>}</li>
+ *   <li>{@link ssda_research.impl.PatientImpl#getFamily_history <em>Family history</em>}</li>
  * </ul>
  *
  * @generated
@@ -243,14 +244,14 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 	protected EList<Symptoms> symp;
 
 	/**
-	 * The cached value of the '{@link #getMed() <em>Med</em>}' reference list.
+	 * The cached value of the '{@link #getDrug() <em>Drug</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMed()
+	 * @see #getDrug()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Medicines> med;
+	protected EList<Drug> drug;
 
 	/**
 	 * The cached value of the '{@link #getDoctor() <em>Doctor</em>}' reference list.
@@ -271,6 +272,26 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 	 * @ordered
 	 */
 	protected DiabetesPrediction view_pred;
+
+	/**
+	 * The default value of the '{@link #getFamily_history() <em>Family history</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFamily_history()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FAMILY_HISTORY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFamily_history() <em>Family history</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFamily_history()
+	 * @generated
+	 * @ordered
+	 */
+	protected String family_history = FAMILY_HISTORY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -523,11 +544,11 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 	 * @generated
 	 */
 	@Override
-	public EList<Medicines> getMed() {
-		if (med == null) {
-			med = new EObjectResolvingEList<Medicines>(Medicines.class, this, Ssda_researchPackage.PATIENT__MED);
+	public EList<Drug> getDrug() {
+		if (drug == null) {
+			drug = new EObjectResolvingEList<Drug>(Drug.class, this, Ssda_researchPackage.PATIENT__DRUG);
 		}
-		return med;
+		return drug;
 	}
 
 	/**
@@ -591,6 +612,30 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getFamily_history() {
+		return family_history;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFamily_history(String newFamily_history) {
+		String oldFamily_history = family_history;
+		family_history = newFamily_history;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Ssda_researchPackage.PATIENT__FAMILY_HISTORY,
+					oldFamily_history, family_history));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -643,14 +688,16 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 			return getOther_diseases();
 		case Ssda_researchPackage.PATIENT__SYMP:
 			return getSymp();
-		case Ssda_researchPackage.PATIENT__MED:
-			return getMed();
+		case Ssda_researchPackage.PATIENT__DRUG:
+			return getDrug();
 		case Ssda_researchPackage.PATIENT__DOCTOR:
 			return getDoctor();
 		case Ssda_researchPackage.PATIENT__VIEW_PRED:
 			if (resolve)
 				return getView_pred();
 			return basicGetView_pred();
+		case Ssda_researchPackage.PATIENT__FAMILY_HISTORY:
+			return getFamily_history();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -695,9 +742,9 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 			getSymp().clear();
 			getSymp().addAll((Collection<? extends Symptoms>) newValue);
 			return;
-		case Ssda_researchPackage.PATIENT__MED:
-			getMed().clear();
-			getMed().addAll((Collection<? extends Medicines>) newValue);
+		case Ssda_researchPackage.PATIENT__DRUG:
+			getDrug().clear();
+			getDrug().addAll((Collection<? extends Drug>) newValue);
 			return;
 		case Ssda_researchPackage.PATIENT__DOCTOR:
 			getDoctor().clear();
@@ -705,6 +752,9 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 			return;
 		case Ssda_researchPackage.PATIENT__VIEW_PRED:
 			setView_pred((DiabetesPrediction) newValue);
+			return;
+		case Ssda_researchPackage.PATIENT__FAMILY_HISTORY:
+			setFamily_history((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -748,14 +798,17 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 		case Ssda_researchPackage.PATIENT__SYMP:
 			getSymp().clear();
 			return;
-		case Ssda_researchPackage.PATIENT__MED:
-			getMed().clear();
+		case Ssda_researchPackage.PATIENT__DRUG:
+			getDrug().clear();
 			return;
 		case Ssda_researchPackage.PATIENT__DOCTOR:
 			getDoctor().clear();
 			return;
 		case Ssda_researchPackage.PATIENT__VIEW_PRED:
 			setView_pred((DiabetesPrediction) null);
+			return;
+		case Ssda_researchPackage.PATIENT__FAMILY_HISTORY:
+			setFamily_history(FAMILY_HISTORY_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -791,12 +844,15 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 					: !OTHER_DISEASES_EDEFAULT.equals(other_diseases);
 		case Ssda_researchPackage.PATIENT__SYMP:
 			return symp != null && !symp.isEmpty();
-		case Ssda_researchPackage.PATIENT__MED:
-			return med != null && !med.isEmpty();
+		case Ssda_researchPackage.PATIENT__DRUG:
+			return drug != null && !drug.isEmpty();
 		case Ssda_researchPackage.PATIENT__DOCTOR:
 			return doctor != null && !doctor.isEmpty();
 		case Ssda_researchPackage.PATIENT__VIEW_PRED:
 			return view_pred != null;
+		case Ssda_researchPackage.PATIENT__FAMILY_HISTORY:
+			return FAMILY_HISTORY_EDEFAULT == null ? family_history != null
+					: !FAMILY_HISTORY_EDEFAULT.equals(family_history);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -830,6 +886,8 @@ public class PatientImpl extends MinimalEObjectImpl.Container implements Patient
 		result.append(age);
 		result.append(", Other_diseases: ");
 		result.append(other_diseases);
+		result.append(", family_history: ");
+		result.append(family_history);
 		result.append(')');
 		return result.toString();
 	}

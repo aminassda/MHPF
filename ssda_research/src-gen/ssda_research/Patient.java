@@ -25,9 +25,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ssda_research.Patient#getAge <em>Age</em>}</li>
  *   <li>{@link ssda_research.Patient#getOther_diseases <em>Other diseases</em>}</li>
  *   <li>{@link ssda_research.Patient#getSymp <em>Symp</em>}</li>
- *   <li>{@link ssda_research.Patient#getMed <em>Med</em>}</li>
+ *   <li>{@link ssda_research.Patient#getDrug <em>Drug</em>}</li>
  *   <li>{@link ssda_research.Patient#getDoctor <em>Doctor</em>}</li>
  *   <li>{@link ssda_research.Patient#getView_pred <em>View pred</em>}</li>
+ *   <li>{@link ssda_research.Patient#getFamily_history <em>Family history</em>}</li>
  * </ul>
  *
  * @see ssda_research.Ssda_researchPackage#getPatient()
@@ -246,16 +247,16 @@ public interface Patient extends EObject {
 	EList<Symptoms> getSymp();
 
 	/**
-	 * Returns the value of the '<em><b>Med</b></em>' reference list.
-	 * The list contents are of type {@link ssda_research.Medicines}.
+	 * Returns the value of the '<em><b>Drug</b></em>' reference list.
+	 * The list contents are of type {@link ssda_research.Drug}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Med</em>' reference list.
-	 * @see ssda_research.Ssda_researchPackage#getPatient_Med()
+	 * @return the value of the '<em>Drug</em>' reference list.
+	 * @see ssda_research.Ssda_researchPackage#getPatient_Drug()
 	 * @model
 	 * @generated
 	 */
-	EList<Medicines> getMed();
+	EList<Drug> getDrug();
 
 	/**
 	 * Returns the value of the '<em><b>Doctor</b></em>' reference list.
@@ -292,5 +293,27 @@ public interface Patient extends EObject {
 	 * @generated
 	 */
 	void setView_pred(DiabetesPrediction value);
+
+	/**
+	 * Returns the value of the '<em><b>Family history</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Family history</em>' attribute.
+	 * @see #setFamily_history(String)
+	 * @see ssda_research.Ssda_researchPackage#getPatient_Family_history()
+	 * @model
+	 * @generated
+	 */
+	String getFamily_history();
+
+	/**
+	 * Sets the value of the '{@link ssda_research.Patient#getFamily_history <em>Family history</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Family history</em>' attribute.
+	 * @see #getFamily_history()
+	 * @generated
+	 */
+	void setFamily_history(String value);
 
 } // Patient

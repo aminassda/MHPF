@@ -10,7 +10,7 @@
         eType="#//Patient" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="symp" upperBound="-1" eType="#//Symptoms"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="med" upperBound="-1" eType="#//Medicines"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drug" upperBound="-1" eType="#//Drug"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="doctor" upperBound="-1"
         eType="#//Doctor" containment="true"/>
@@ -40,18 +40,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="age" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Other_diseases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="symp" upperBound="-1" eType="#//Symptoms"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="med" upperBound="-1" eType="#//Medicines"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drug" upperBound="-1" eType="#//Drug"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="doctor" upperBound="-1"
         eType="#//Doctor" eOpposite="#//Doctor/patient"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="view_pred" lowerBound="1"
         eType="#//DiabetesPrediction"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="family_history" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Symptoms">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symptom_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Medicines">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="medicine_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="medicine_dossage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Drug" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="drug_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Doctor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -62,8 +62,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="specalization" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="patient" upperBound="-1"
         eType="#//Patient" eOpposite="#//Patient/doctor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recommend_med" upperBound="-1"
-        eType="#//Medicines"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recommend_drug" upperBound="-1"
+        eType="#//Drug"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="view_pred" lowerBound="1"
         eType="#//DiabetesPrediction"/>
   </eClassifiers>
@@ -319,4 +319,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class_weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_features" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Oral_drugs" eSuperTypes="#//Drug"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Nonoral_Drugs" eSuperTypes="#//Drug"/>
 </ecore:EPackage>

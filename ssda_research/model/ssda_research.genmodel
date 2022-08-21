@@ -41,7 +41,7 @@
     <genClasses ecoreClass="ssda_research.ecore#//DiabeticRecommendationSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/patient"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/symp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/med"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/drug"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/doctor"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/pred"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssda_research.ecore#//DiabeticRecommendationSystem/dataset"/>
@@ -62,16 +62,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/age"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/Other_diseases"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/symp"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/med"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/drug"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/doctor"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Patient/view_pred"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Patient/family_history"/>
     </genClasses>
     <genClasses ecoreClass="ssda_research.ecore#//Symptoms">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Symptoms/symptom_name"/>
     </genClasses>
-    <genClasses ecoreClass="ssda_research.ecore#//Medicines">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Medicines/medicine_name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Medicines/medicine_dossage"/>
+    <genClasses ecoreClass="ssda_research.ecore#//Drug">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Drug/drug_name"/>
     </genClasses>
     <genClasses ecoreClass="ssda_research.ecore#//Doctor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Doctor/name"/>
@@ -80,7 +80,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Doctor/phone_no"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//Doctor/specalization"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Doctor/patient"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Doctor/recommend_med"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Doctor/recommend_drug"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssda_research.ecore#//Doctor/view_pred"/>
     </genClasses>
     <genClasses ecoreClass="ssda_research.ecore#//DiabetesPrediction">
@@ -278,5 +278,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/class_weight"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssda_research.ecore#//DecisionTreeClassifier/max_features"/>
     </genClasses>
+    <genClasses ecoreClass="ssda_research.ecore#//Oral_drugs"/>
+    <genClasses ecoreClass="ssda_research.ecore#//Nonoral_Drugs"/>
   </genPackages>
 </genmodel:GenModel>

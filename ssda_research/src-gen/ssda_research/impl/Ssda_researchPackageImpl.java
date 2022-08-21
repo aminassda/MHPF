@@ -20,6 +20,7 @@ import ssda_research.DecisionTreeClassifier;
 import ssda_research.DiabetesPrediction;
 import ssda_research.DiabeticRecommendationSystem;
 import ssda_research.Doctor;
+import ssda_research.Drug;
 import ssda_research.Encoding;
 import ssda_research.ExploratoryDataAnalysis;
 import ssda_research.FeatureScaling;
@@ -34,10 +35,11 @@ import ssda_research.KNeighborsClassifier;
 import ssda_research.LabelEncoding;
 import ssda_research.LogisticRegression;
 import ssda_research.MLPClassifier;
-import ssda_research.Medicines;
 import ssda_research.MissingValues;
 import ssda_research.ModelOptimization;
+import ssda_research.Nonoral_Drugs;
 import ssda_research.Numeric_Outlier;
+import ssda_research.Oral_drugs;
 import ssda_research.OutlierDetection;
 import ssda_research.OverSampling;
 import ssda_research.Oversampling_technique;
@@ -101,7 +103,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass medicinesEClass = null;
+	private EClass drugEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,6 +195,20 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	private EClass decisionTreeClassifierEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass oral_drugsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nonoral_DrugsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -595,7 +611,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public EReference getDiabeticRecommendationSystem_Med() {
+	public EReference getDiabeticRecommendationSystem_Drug() {
 		return (EReference) diabeticRecommendationSystemEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -795,7 +811,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public EReference getPatient_Med() {
+	public EReference getPatient_Drug() {
 		return (EReference) patientEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -825,6 +841,16 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
+	public EAttribute getPatient_Family_history() {
+		return (EAttribute) patientEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSymptoms() {
 		return symptomsEClass;
 	}
@@ -845,8 +871,8 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public EClass getMedicines() {
-		return medicinesEClass;
+	public EClass getDrug() {
+		return drugEClass;
 	}
 
 	/**
@@ -855,18 +881,8 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMedicines_Medicine_name() {
-		return (EAttribute) medicinesEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMedicines_Medicine_dossage() {
-		return (EAttribute) medicinesEClass.getEStructuralFeatures().get(1);
+	public EAttribute getDrug_Drug_name() {
+		return (EAttribute) drugEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -945,7 +961,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public EReference getDoctor_Recommend_med() {
+	public EReference getDoctor_Recommend_drug() {
 		return (EReference) doctorEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1477,6 +1493,26 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 	@Override
 	public EAttribute getDecisionTreeClassifier_Max_features() {
 		return (EAttribute) decisionTreeClassifierEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getOral_drugs() {
+		return oral_drugsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getNonoral_Drugs() {
+		return nonoral_DrugsEClass;
 	}
 
 	/**
@@ -2662,7 +2698,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		diabeticRecommendationSystemEClass = createEClass(DIABETIC_RECOMMENDATION_SYSTEM);
 		createEReference(diabeticRecommendationSystemEClass, DIABETIC_RECOMMENDATION_SYSTEM__PATIENT);
 		createEReference(diabeticRecommendationSystemEClass, DIABETIC_RECOMMENDATION_SYSTEM__SYMP);
-		createEReference(diabeticRecommendationSystemEClass, DIABETIC_RECOMMENDATION_SYSTEM__MED);
+		createEReference(diabeticRecommendationSystemEClass, DIABETIC_RECOMMENDATION_SYSTEM__DRUG);
 		createEReference(diabeticRecommendationSystemEClass, DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR);
 		createEReference(diabeticRecommendationSystemEClass, DIABETIC_RECOMMENDATION_SYSTEM__PRED);
 		createEReference(diabeticRecommendationSystemEClass, DIABETIC_RECOMMENDATION_SYSTEM__DATASET);
@@ -2683,16 +2719,16 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		createEAttribute(patientEClass, PATIENT__AGE);
 		createEAttribute(patientEClass, PATIENT__OTHER_DISEASES);
 		createEReference(patientEClass, PATIENT__SYMP);
-		createEReference(patientEClass, PATIENT__MED);
+		createEReference(patientEClass, PATIENT__DRUG);
 		createEReference(patientEClass, PATIENT__DOCTOR);
 		createEReference(patientEClass, PATIENT__VIEW_PRED);
+		createEAttribute(patientEClass, PATIENT__FAMILY_HISTORY);
 
 		symptomsEClass = createEClass(SYMPTOMS);
 		createEAttribute(symptomsEClass, SYMPTOMS__SYMPTOM_NAME);
 
-		medicinesEClass = createEClass(MEDICINES);
-		createEAttribute(medicinesEClass, MEDICINES__MEDICINE_NAME);
-		createEAttribute(medicinesEClass, MEDICINES__MEDICINE_DOSSAGE);
+		drugEClass = createEClass(DRUG);
+		createEAttribute(drugEClass, DRUG__DRUG_NAME);
 
 		doctorEClass = createEClass(DOCTOR);
 		createEAttribute(doctorEClass, DOCTOR__NAME);
@@ -2701,7 +2737,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		createEAttribute(doctorEClass, DOCTOR__PHONE_NO);
 		createEAttribute(doctorEClass, DOCTOR__SPECALIZATION);
 		createEReference(doctorEClass, DOCTOR__PATIENT);
-		createEReference(doctorEClass, DOCTOR__RECOMMEND_MED);
+		createEReference(doctorEClass, DOCTOR__RECOMMEND_DRUG);
 		createEReference(doctorEClass, DOCTOR__VIEW_PRED);
 
 		diabetesPredictionEClass = createEClass(DIABETES_PREDICTION);
@@ -2904,6 +2940,10 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		createEAttribute(decisionTreeClassifierEClass, DECISION_TREE_CLASSIFIER__CLASS_WEIGHT);
 		createEAttribute(decisionTreeClassifierEClass, DECISION_TREE_CLASSIFIER__MAX_FEATURES);
 
+		oral_drugsEClass = createEClass(ORAL_DRUGS);
+
+		nonoral_DrugsEClass = createEClass(NONORAL_DRUGS);
+
 		// Create enums
 		hybrid_sampling_methodEEnum = createEEnum(HYBRID_SAMPLING_METHOD);
 		oversampling_techniqueEEnum = createEEnum(OVERSAMPLING_TECHNIQUE);
@@ -2982,6 +3022,8 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		labelEncodingEClass.getESuperTypes().add(this.getEncoding());
 		kFoldEClass.getESuperTypes().add(this.getValidation());
 		decisionTreeClassifierEClass.getESuperTypes().add(this.getclassifiers());
+		oral_drugsEClass.getESuperTypes().add(this.getDrug());
+		nonoral_DrugsEClass.getESuperTypes().add(this.getDrug());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(diabeticRecommendationSystemEClass, DiabeticRecommendationSystem.class,
@@ -2992,7 +3034,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		initEReference(getDiabeticRecommendationSystem_Symp(), this.getSymptoms(), null, "symp", null, 0, -1,
 				DiabeticRecommendationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiabeticRecommendationSystem_Med(), this.getMedicines(), null, "med", null, 0, -1,
+		initEReference(getDiabeticRecommendationSystem_Drug(), this.getDrug(), null, "drug", null, 0, -1,
 				DiabeticRecommendationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiabeticRecommendationSystem_Doctor(), this.getDoctor(), null, "doctor", null, 0, -1,
@@ -3044,7 +3086,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		initEReference(getPatient_Symp(), this.getSymptoms(), null, "symp", null, 0, -1, Patient.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getPatient_Med(), this.getMedicines(), null, "med", null, 0, -1, Patient.class, !IS_TRANSIENT,
+		initEReference(getPatient_Drug(), this.getDrug(), null, "drug", null, 0, -1, Patient.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getPatient_Doctor(), this.getDoctor(), this.getDoctor_Patient(), "doctor", null, 0, -1,
@@ -3053,6 +3095,9 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		initEReference(getPatient_View_pred(), this.getDiabetesPrediction(), null, "view_pred", null, 1, 1,
 				Patient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPatient_Family_history(), ecorePackage.getEString(), "family_history", null, 0, 1,
+				Patient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(symptomsEClass, Symptoms.class, "Symptoms", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3060,14 +3105,9 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 				Symptoms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(medicinesEClass, Medicines.class, "Medicines", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMedicines_Medicine_name(), ecorePackage.getEString(), "medicine_name", null, 0, 1,
-				Medicines.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMedicines_Medicine_dossage(), ecorePackage.getEString(), "medicine_dossage", null, 0, 1,
-				Medicines.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEClass(drugEClass, Drug.class, "Drug", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDrug_Drug_name(), ecorePackage.getEString(), "drug_name", null, 0, 1, Drug.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(doctorEClass, Doctor.class, "Doctor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDoctor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Doctor.class, !IS_TRANSIENT,
@@ -3084,7 +3124,7 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		initEReference(getDoctor_Patient(), this.getPatient(), this.getPatient_Doctor(), "patient", null, 0, -1,
 				Doctor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDoctor_Recommend_med(), this.getMedicines(), null, "recommend_med", null, 0, -1, Doctor.class,
+		initEReference(getDoctor_Recommend_drug(), this.getDrug(), null, "recommend_drug", null, 0, -1, Doctor.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDoctor_View_pred(), this.getDiabetesPrediction(), null, "view_pred", null, 1, 1, Doctor.class,
@@ -3499,6 +3539,12 @@ public class Ssda_researchPackageImpl extends EPackageImpl implements Ssda_resea
 		initEAttribute(getDecisionTreeClassifier_Max_features(), ecorePackage.getEString(), "max_features", null, 0, 1,
 				DecisionTreeClassifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(oral_drugsEClass, Oral_drugs.class, "Oral_drugs", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(nonoral_DrugsEClass, Nonoral_Drugs.class, "Nonoral_Drugs", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(hybrid_sampling_methodEEnum, Hybrid_sampling_method.class, "Hybrid_sampling_method");

@@ -89,13 +89,13 @@ public interface Ssda_researchPackage extends EPackage {
 	int DIABETIC_RECOMMENDATION_SYSTEM__SYMP = 1;
 
 	/**
-	 * The feature id for the '<em><b>Med</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Drug</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIABETIC_RECOMMENDATION_SYSTEM__MED = 2;
+	int DIABETIC_RECOMMENDATION_SYSTEM__DRUG = 2;
 
 	/**
 	 * The feature id for the '<em><b>Doctor</b></em>' containment reference list.
@@ -288,13 +288,13 @@ public interface Ssda_researchPackage extends EPackage {
 	int PATIENT__SYMP = 9;
 
 	/**
-	 * The feature id for the '<em><b>Med</b></em>' reference list.
+	 * The feature id for the '<em><b>Drug</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__MED = 10;
+	int PATIENT__DRUG = 10;
 
 	/**
 	 * The feature id for the '<em><b>Doctor</b></em>' reference list.
@@ -315,13 +315,22 @@ public interface Ssda_researchPackage extends EPackage {
 	int PATIENT__VIEW_PRED = 12;
 
 	/**
+	 * The feature id for the '<em><b>Family history</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATIENT__FAMILY_HISTORY = 13;
+
+	/**
 	 * The number of structural features of the '<em>Patient</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_FEATURE_COUNT = 13;
+	int PATIENT_FEATURE_COUNT = 14;
 
 	/**
 	 * The number of operations of the '<em>Patient</em>' class.
@@ -370,50 +379,41 @@ public interface Ssda_researchPackage extends EPackage {
 	int SYMPTOMS_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ssda_research.impl.MedicinesImpl <em>Medicines</em>}' class.
+	 * The meta object id for the '{@link ssda_research.impl.DrugImpl <em>Drug</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ssda_research.impl.MedicinesImpl
-	 * @see ssda_research.impl.Ssda_researchPackageImpl#getMedicines()
+	 * @see ssda_research.impl.DrugImpl
+	 * @see ssda_research.impl.Ssda_researchPackageImpl#getDrug()
 	 * @generated
 	 */
-	int MEDICINES = 3;
+	int DRUG = 3;
 
 	/**
-	 * The feature id for the '<em><b>Medicine name</b></em>' attribute.
+	 * The feature id for the '<em><b>Drug name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICINES__MEDICINE_NAME = 0;
+	int DRUG__DRUG_NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Medicine dossage</b></em>' attribute.
+	 * The number of structural features of the '<em>Drug</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICINES__MEDICINE_DOSSAGE = 1;
+	int DRUG_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of structural features of the '<em>Medicines</em>' class.
+	 * The number of operations of the '<em>Drug</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICINES_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Medicines</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDICINES_OPERATION_COUNT = 0;
+	int DRUG_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ssda_research.impl.DoctorImpl <em>Doctor</em>}' class.
@@ -480,13 +480,13 @@ public interface Ssda_researchPackage extends EPackage {
 	int DOCTOR__PATIENT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Recommend med</b></em>' reference list.
+	 * The feature id for the '<em><b>Recommend drug</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCTOR__RECOMMEND_MED = 6;
+	int DOCTOR__RECOMMEND_DRUG = 6;
 
 	/**
 	 * The feature id for the '<em><b>View pred</b></em>' reference.
@@ -4070,6 +4070,80 @@ public interface Ssda_researchPackage extends EPackage {
 	int DECISION_TREE_CLASSIFIER_OPERATION_COUNT = CLASSIFIERS_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link ssda_research.impl.Oral_drugsImpl <em>Oral drugs</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ssda_research.impl.Oral_drugsImpl
+	 * @see ssda_research.impl.Ssda_researchPackageImpl#getOral_drugs()
+	 * @generated
+	 */
+	int ORAL_DRUGS = 49;
+
+	/**
+	 * The feature id for the '<em><b>Drug name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORAL_DRUGS__DRUG_NAME = DRUG__DRUG_NAME;
+
+	/**
+	 * The number of structural features of the '<em>Oral drugs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORAL_DRUGS_FEATURE_COUNT = DRUG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Oral drugs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORAL_DRUGS_OPERATION_COUNT = DRUG_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ssda_research.impl.Nonoral_DrugsImpl <em>Nonoral Drugs</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ssda_research.impl.Nonoral_DrugsImpl
+	 * @see ssda_research.impl.Ssda_researchPackageImpl#getNonoral_Drugs()
+	 * @generated
+	 */
+	int NONORAL_DRUGS = 50;
+
+	/**
+	 * The feature id for the '<em><b>Drug name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONORAL_DRUGS__DRUG_NAME = DRUG__DRUG_NAME;
+
+	/**
+	 * The number of structural features of the '<em>Nonoral Drugs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONORAL_DRUGS_FEATURE_COUNT = DRUG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Nonoral Drugs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONORAL_DRUGS_OPERATION_COUNT = DRUG_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link ssda_research.Hybrid_sampling_method <em>Hybrid sampling method</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4077,7 +4151,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getHybrid_sampling_method()
 	 * @generated
 	 */
-	int HYBRID_SAMPLING_METHOD = 49;
+	int HYBRID_SAMPLING_METHOD = 51;
 
 	/**
 	 * The meta object id for the '{@link ssda_research.Oversampling_technique <em>Oversampling technique</em>}' enum.
@@ -4087,7 +4161,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getOversampling_technique()
 	 * @generated
 	 */
-	int OVERSAMPLING_TECHNIQUE = 50;
+	int OVERSAMPLING_TECHNIQUE = 52;
 
 	/**
 	 * The meta object id for the '{@link ssda_research.UnderSampling_technique <em>Under Sampling technique</em>}' enum.
@@ -4097,7 +4171,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getUnderSampling_technique()
 	 * @generated
 	 */
-	int UNDER_SAMPLING_TECHNIQUE = 51;
+	int UNDER_SAMPLING_TECHNIQUE = 53;
 
 	/**
 	 * The meta object id for the '{@link ssda_research.Sampling_strategy <em>Sampling strategy</em>}' enum.
@@ -4107,7 +4181,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getSampling_strategy()
 	 * @generated
 	 */
-	int SAMPLING_STRATEGY = 52;
+	int SAMPLING_STRATEGY = 54;
 
 	/**
 	 * The meta object id for the '{@link ssda_research.Voting_type <em>Voting type</em>}' enum.
@@ -4117,7 +4191,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getVoting_type()
 	 * @generated
 	 */
-	int VOTING_TYPE = 53;
+	int VOTING_TYPE = 55;
 
 	/**
 	 * The meta object id for the '{@link ssda_research.Regularization <em>Regularization</em>}' enum.
@@ -4127,7 +4201,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getRegularization()
 	 * @generated
 	 */
-	int REGULARIZATION = 54;
+	int REGULARIZATION = 56;
 
 	/**
 	 * The meta object id for the '<em>Trained</em>' data type.
@@ -4137,7 +4211,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getTrained()
 	 * @generated
 	 */
-	int TRAINED = 55;
+	int TRAINED = 57;
 
 	/**
 	 * The meta object id for the '<em>Tested</em>' data type.
@@ -4147,7 +4221,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getTested()
 	 * @generated
 	 */
-	int TESTED = 56;
+	int TESTED = 58;
 
 	/**
 	 * The meta object id for the '<em>Lower Quartile</em>' data type.
@@ -4157,7 +4231,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getLowerQuartile()
 	 * @generated
 	 */
-	int LOWER_QUARTILE = 57;
+	int LOWER_QUARTILE = 59;
 
 	/**
 	 * The meta object id for the '<em>Upper Quartile</em>' data type.
@@ -4167,7 +4241,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getUpperQuartile()
 	 * @generated
 	 */
-	int UPPER_QUARTILE = 58;
+	int UPPER_QUARTILE = 60;
 
 	/**
 	 * The meta object id for the '<em>Median</em>' data type.
@@ -4177,7 +4251,7 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @see ssda_research.impl.Ssda_researchPackageImpl#getMedian()
 	 * @generated
 	 */
-	int MEDIAN = 59;
+	int MEDIAN = 61;
 
 	/**
 	 * Returns the meta object for class '{@link ssda_research.DiabeticRecommendationSystem <em>Diabetic Recommendation System</em>}'.
@@ -4212,15 +4286,15 @@ public interface Ssda_researchPackage extends EPackage {
 	EReference getDiabeticRecommendationSystem_Symp();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ssda_research.DiabeticRecommendationSystem#getMed <em>Med</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ssda_research.DiabeticRecommendationSystem#getDrug <em>Drug</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Med</em>'.
-	 * @see ssda_research.DiabeticRecommendationSystem#getMed()
+	 * @return the meta object for the containment reference list '<em>Drug</em>'.
+	 * @see ssda_research.DiabeticRecommendationSystem#getDrug()
 	 * @see #getDiabeticRecommendationSystem()
 	 * @generated
 	 */
-	EReference getDiabeticRecommendationSystem_Med();
+	EReference getDiabeticRecommendationSystem_Drug();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link ssda_research.DiabeticRecommendationSystem#getDoctor <em>Doctor</em>}'.
@@ -4431,15 +4505,15 @@ public interface Ssda_researchPackage extends EPackage {
 	EReference getPatient_Symp();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ssda_research.Patient#getMed <em>Med</em>}'.
+	 * Returns the meta object for the reference list '{@link ssda_research.Patient#getDrug <em>Drug</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Med</em>'.
-	 * @see ssda_research.Patient#getMed()
+	 * @return the meta object for the reference list '<em>Drug</em>'.
+	 * @see ssda_research.Patient#getDrug()
 	 * @see #getPatient()
 	 * @generated
 	 */
-	EReference getPatient_Med();
+	EReference getPatient_Drug();
 
 	/**
 	 * Returns the meta object for the reference list '{@link ssda_research.Patient#getDoctor <em>Doctor</em>}'.
@@ -4464,6 +4538,17 @@ public interface Ssda_researchPackage extends EPackage {
 	EReference getPatient_View_pred();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ssda_research.Patient#getFamily_history <em>Family history</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Family history</em>'.
+	 * @see ssda_research.Patient#getFamily_history()
+	 * @see #getPatient()
+	 * @generated
+	 */
+	EAttribute getPatient_Family_history();
+
+	/**
 	 * Returns the meta object for class '{@link ssda_research.Symptoms <em>Symptoms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4485,36 +4570,25 @@ public interface Ssda_researchPackage extends EPackage {
 	EAttribute getSymptoms_Symptom_name();
 
 	/**
-	 * Returns the meta object for class '{@link ssda_research.Medicines <em>Medicines</em>}'.
+	 * Returns the meta object for class '{@link ssda_research.Drug <em>Drug</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Medicines</em>'.
-	 * @see ssda_research.Medicines
+	 * @return the meta object for class '<em>Drug</em>'.
+	 * @see ssda_research.Drug
 	 * @generated
 	 */
-	EClass getMedicines();
+	EClass getDrug();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ssda_research.Medicines#getMedicine_name <em>Medicine name</em>}'.
+	 * Returns the meta object for the attribute '{@link ssda_research.Drug#getDrug_name <em>Drug name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Medicine name</em>'.
-	 * @see ssda_research.Medicines#getMedicine_name()
-	 * @see #getMedicines()
+	 * @return the meta object for the attribute '<em>Drug name</em>'.
+	 * @see ssda_research.Drug#getDrug_name()
+	 * @see #getDrug()
 	 * @generated
 	 */
-	EAttribute getMedicines_Medicine_name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ssda_research.Medicines#getMedicine_dossage <em>Medicine dossage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Medicine dossage</em>'.
-	 * @see ssda_research.Medicines#getMedicine_dossage()
-	 * @see #getMedicines()
-	 * @generated
-	 */
-	EAttribute getMedicines_Medicine_dossage();
+	EAttribute getDrug_Drug_name();
 
 	/**
 	 * Returns the meta object for class '{@link ssda_research.Doctor <em>Doctor</em>}'.
@@ -4593,15 +4667,15 @@ public interface Ssda_researchPackage extends EPackage {
 	EReference getDoctor_Patient();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ssda_research.Doctor#getRecommend_med <em>Recommend med</em>}'.
+	 * Returns the meta object for the reference list '{@link ssda_research.Doctor#getRecommend_drug <em>Recommend drug</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Recommend med</em>'.
-	 * @see ssda_research.Doctor#getRecommend_med()
+	 * @return the meta object for the reference list '<em>Recommend drug</em>'.
+	 * @see ssda_research.Doctor#getRecommend_drug()
 	 * @see #getDoctor()
 	 * @generated
 	 */
-	EReference getDoctor_Recommend_med();
+	EReference getDoctor_Recommend_drug();
 
 	/**
 	 * Returns the meta object for the reference '{@link ssda_research.Doctor#getView_pred <em>View pred</em>}'.
@@ -5163,6 +5237,26 @@ public interface Ssda_researchPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDecisionTreeClassifier_Max_features();
+
+	/**
+	 * Returns the meta object for class '{@link ssda_research.Oral_drugs <em>Oral drugs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Oral drugs</em>'.
+	 * @see ssda_research.Oral_drugs
+	 * @generated
+	 */
+	EClass getOral_drugs();
+
+	/**
+	 * Returns the meta object for class '{@link ssda_research.Nonoral_Drugs <em>Nonoral Drugs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Nonoral Drugs</em>'.
+	 * @see ssda_research.Nonoral_Drugs
+	 * @generated
+	 */
+	EClass getNonoral_Drugs();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ssda_research.DecisionTreeClassifier#getClass_weight <em>Class weight</em>}'.
@@ -6418,12 +6512,12 @@ public interface Ssda_researchPackage extends EPackage {
 		EReference DIABETIC_RECOMMENDATION_SYSTEM__SYMP = eINSTANCE.getDiabeticRecommendationSystem_Symp();
 
 		/**
-		 * The meta object literal for the '<em><b>Med</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Drug</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DIABETIC_RECOMMENDATION_SYSTEM__MED = eINSTANCE.getDiabeticRecommendationSystem_Med();
+		EReference DIABETIC_RECOMMENDATION_SYSTEM__DRUG = eINSTANCE.getDiabeticRecommendationSystem_Drug();
 
 		/**
 		 * The meta object literal for the '<em><b>Doctor</b></em>' containment reference list feature.
@@ -6581,12 +6675,12 @@ public interface Ssda_researchPackage extends EPackage {
 		EReference PATIENT__SYMP = eINSTANCE.getPatient_Symp();
 
 		/**
-		 * The meta object literal for the '<em><b>Med</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Drug</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PATIENT__MED = eINSTANCE.getPatient_Med();
+		EReference PATIENT__DRUG = eINSTANCE.getPatient_Drug();
 
 		/**
 		 * The meta object literal for the '<em><b>Doctor</b></em>' reference list feature.
@@ -6603,6 +6697,14 @@ public interface Ssda_researchPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PATIENT__VIEW_PRED = eINSTANCE.getPatient_View_pred();
+
+		/**
+		 * The meta object literal for the '<em><b>Family history</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PATIENT__FAMILY_HISTORY = eINSTANCE.getPatient_Family_history();
 
 		/**
 		 * The meta object literal for the '{@link ssda_research.impl.SymptomsImpl <em>Symptoms</em>}' class.
@@ -6623,30 +6725,22 @@ public interface Ssda_researchPackage extends EPackage {
 		EAttribute SYMPTOMS__SYMPTOM_NAME = eINSTANCE.getSymptoms_Symptom_name();
 
 		/**
-		 * The meta object literal for the '{@link ssda_research.impl.MedicinesImpl <em>Medicines</em>}' class.
+		 * The meta object literal for the '{@link ssda_research.impl.DrugImpl <em>Drug</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ssda_research.impl.MedicinesImpl
-		 * @see ssda_research.impl.Ssda_researchPackageImpl#getMedicines()
+		 * @see ssda_research.impl.DrugImpl
+		 * @see ssda_research.impl.Ssda_researchPackageImpl#getDrug()
 		 * @generated
 		 */
-		EClass MEDICINES = eINSTANCE.getMedicines();
+		EClass DRUG = eINSTANCE.getDrug();
 
 		/**
-		 * The meta object literal for the '<em><b>Medicine name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Drug name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MEDICINES__MEDICINE_NAME = eINSTANCE.getMedicines_Medicine_name();
-
-		/**
-		 * The meta object literal for the '<em><b>Medicine dossage</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MEDICINES__MEDICINE_DOSSAGE = eINSTANCE.getMedicines_Medicine_dossage();
+		EAttribute DRUG__DRUG_NAME = eINSTANCE.getDrug_Drug_name();
 
 		/**
 		 * The meta object literal for the '{@link ssda_research.impl.DoctorImpl <em>Doctor</em>}' class.
@@ -6707,12 +6801,12 @@ public interface Ssda_researchPackage extends EPackage {
 		EReference DOCTOR__PATIENT = eINSTANCE.getDoctor_Patient();
 
 		/**
-		 * The meta object literal for the '<em><b>Recommend med</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Recommend drug</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DOCTOR__RECOMMEND_MED = eINSTANCE.getDoctor_Recommend_med();
+		EReference DOCTOR__RECOMMEND_DRUG = eINSTANCE.getDoctor_Recommend_drug();
 
 		/**
 		 * The meta object literal for the '<em><b>View pred</b></em>' reference feature.
@@ -7165,6 +7259,26 @@ public interface Ssda_researchPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DECISION_TREE_CLASSIFIER__MAX_FEATURES = eINSTANCE.getDecisionTreeClassifier_Max_features();
+
+		/**
+		 * The meta object literal for the '{@link ssda_research.impl.Oral_drugsImpl <em>Oral drugs</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ssda_research.impl.Oral_drugsImpl
+		 * @see ssda_research.impl.Ssda_researchPackageImpl#getOral_drugs()
+		 * @generated
+		 */
+		EClass ORAL_DRUGS = eINSTANCE.getOral_drugs();
+
+		/**
+		 * The meta object literal for the '{@link ssda_research.impl.Nonoral_DrugsImpl <em>Nonoral Drugs</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ssda_research.impl.Nonoral_DrugsImpl
+		 * @see ssda_research.impl.Ssda_researchPackageImpl#getNonoral_Drugs()
+		 * @generated
+		 */
+		EClass NONORAL_DRUGS = eINSTANCE.getNonoral_Drugs();
 
 		/**
 		 * The meta object literal for the '<em><b>Class weight</b></em>' attribute feature.

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ssda_research.Doctor#getPhone_no <em>Phone no</em>}</li>
  *   <li>{@link ssda_research.Doctor#getSpecalization <em>Specalization</em>}</li>
  *   <li>{@link ssda_research.Doctor#getPatient <em>Patient</em>}</li>
- *   <li>{@link ssda_research.Doctor#getRecommend_med <em>Recommend med</em>}</li>
+ *   <li>{@link ssda_research.Doctor#getRecommend_drug <em>Recommend drug</em>}</li>
  *   <li>{@link ssda_research.Doctor#getView_pred <em>View pred</em>}</li>
  * </ul>
  *
@@ -155,16 +155,16 @@ public interface Doctor extends EObject {
 	EList<Patient> getPatient();
 
 	/**
-	 * Returns the value of the '<em><b>Recommend med</b></em>' reference list.
-	 * The list contents are of type {@link ssda_research.Medicines}.
+	 * Returns the value of the '<em><b>Recommend drug</b></em>' reference list.
+	 * The list contents are of type {@link ssda_research.Drug}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recommend med</em>' reference list.
-	 * @see ssda_research.Ssda_researchPackage#getDoctor_Recommend_med()
+	 * @return the value of the '<em>Recommend drug</em>' reference list.
+	 * @see ssda_research.Ssda_researchPackage#getDoctor_Recommend_drug()
 	 * @model
 	 * @generated
 	 */
-	EList<Medicines> getRecommend_med();
+	EList<Drug> getRecommend_drug();
 
 	/**
 	 * Returns the value of the '<em><b>View pred</b></em>' reference.

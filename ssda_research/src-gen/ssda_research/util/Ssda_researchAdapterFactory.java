@@ -82,8 +82,8 @@ public class Ssda_researchAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseMedicines(Medicines object) {
-			return createMedicinesAdapter();
+		public Adapter caseDrug(Drug object) {
+			return createDrugAdapter();
 		}
 
 		@Override
@@ -312,6 +312,16 @@ public class Ssda_researchAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseOral_drugs(Oral_drugs object) {
+			return createOral_drugsAdapter();
+		}
+
+		@Override
+		public Adapter caseNonoral_Drugs(Nonoral_Drugs object) {
+			return createNonoral_DrugsAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -373,16 +383,16 @@ public class Ssda_researchAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ssda_research.Medicines <em>Medicines</em>}'.
+	 * Creates a new adapter for an object of class '{@link ssda_research.Drug <em>Drug</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ssda_research.Medicines
+	 * @see ssda_research.Drug
 	 * @generated
 	 */
-	public Adapter createMedicinesAdapter() {
+	public Adapter createDrugAdapter() {
 		return null;
 	}
 
@@ -565,6 +575,34 @@ public class Ssda_researchAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDecisionTreeClassifierAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ssda_research.Oral_drugs <em>Oral drugs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ssda_research.Oral_drugs
+	 * @generated
+	 */
+	public Adapter createOral_drugsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ssda_research.Nonoral_Drugs <em>Nonoral Drugs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ssda_research.Nonoral_Drugs
+	 * @generated
+	 */
+	public Adapter createNonoral_DrugsAdapter() {
 		return null;
 	}
 

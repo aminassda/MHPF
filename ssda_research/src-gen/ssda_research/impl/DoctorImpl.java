@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import ssda_research.DiabetesPrediction;
 import ssda_research.Doctor;
-import ssda_research.Medicines;
+import ssda_research.Drug;
 import ssda_research.Patient;
 import ssda_research.Ssda_researchPackage;
 
@@ -39,7 +39,7 @@ import ssda_research.Ssda_researchPackage;
  *   <li>{@link ssda_research.impl.DoctorImpl#getPhone_no <em>Phone no</em>}</li>
  *   <li>{@link ssda_research.impl.DoctorImpl#getSpecalization <em>Specalization</em>}</li>
  *   <li>{@link ssda_research.impl.DoctorImpl#getPatient <em>Patient</em>}</li>
- *   <li>{@link ssda_research.impl.DoctorImpl#getRecommend_med <em>Recommend med</em>}</li>
+ *   <li>{@link ssda_research.impl.DoctorImpl#getRecommend_drug <em>Recommend drug</em>}</li>
  *   <li>{@link ssda_research.impl.DoctorImpl#getView_pred <em>View pred</em>}</li>
  * </ul>
  *
@@ -157,14 +157,14 @@ public class DoctorImpl extends MinimalEObjectImpl.Container implements Doctor {
 	protected EList<Patient> patient;
 
 	/**
-	 * The cached value of the '{@link #getRecommend_med() <em>Recommend med</em>}' reference list.
+	 * The cached value of the '{@link #getRecommend_drug() <em>Recommend drug</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRecommend_med()
+	 * @see #getRecommend_drug()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Medicines> recommend_med;
+	protected EList<Drug> recommend_drug;
 
 	/**
 	 * The cached value of the '{@link #getView_pred() <em>View pred</em>}' reference.
@@ -334,12 +334,12 @@ public class DoctorImpl extends MinimalEObjectImpl.Container implements Doctor {
 	 * @generated
 	 */
 	@Override
-	public EList<Medicines> getRecommend_med() {
-		if (recommend_med == null) {
-			recommend_med = new EObjectResolvingEList<Medicines>(Medicines.class, this,
-					Ssda_researchPackage.DOCTOR__RECOMMEND_MED);
+	public EList<Drug> getRecommend_drug() {
+		if (recommend_drug == null) {
+			recommend_drug = new EObjectResolvingEList<Drug>(Drug.class, this,
+					Ssda_researchPackage.DOCTOR__RECOMMEND_DRUG);
 		}
-		return recommend_med;
+		return recommend_drug;
 	}
 
 	/**
@@ -433,8 +433,8 @@ public class DoctorImpl extends MinimalEObjectImpl.Container implements Doctor {
 			return getSpecalization();
 		case Ssda_researchPackage.DOCTOR__PATIENT:
 			return getPatient();
-		case Ssda_researchPackage.DOCTOR__RECOMMEND_MED:
-			return getRecommend_med();
+		case Ssda_researchPackage.DOCTOR__RECOMMEND_DRUG:
+			return getRecommend_drug();
 		case Ssda_researchPackage.DOCTOR__VIEW_PRED:
 			if (resolve)
 				return getView_pred();
@@ -471,9 +471,9 @@ public class DoctorImpl extends MinimalEObjectImpl.Container implements Doctor {
 			getPatient().clear();
 			getPatient().addAll((Collection<? extends Patient>) newValue);
 			return;
-		case Ssda_researchPackage.DOCTOR__RECOMMEND_MED:
-			getRecommend_med().clear();
-			getRecommend_med().addAll((Collection<? extends Medicines>) newValue);
+		case Ssda_researchPackage.DOCTOR__RECOMMEND_DRUG:
+			getRecommend_drug().clear();
+			getRecommend_drug().addAll((Collection<? extends Drug>) newValue);
 			return;
 		case Ssda_researchPackage.DOCTOR__VIEW_PRED:
 			setView_pred((DiabetesPrediction) newValue);
@@ -508,8 +508,8 @@ public class DoctorImpl extends MinimalEObjectImpl.Container implements Doctor {
 		case Ssda_researchPackage.DOCTOR__PATIENT:
 			getPatient().clear();
 			return;
-		case Ssda_researchPackage.DOCTOR__RECOMMEND_MED:
-			getRecommend_med().clear();
+		case Ssda_researchPackage.DOCTOR__RECOMMEND_DRUG:
+			getRecommend_drug().clear();
 			return;
 		case Ssda_researchPackage.DOCTOR__VIEW_PRED:
 			setView_pred((DiabetesPrediction) null);
@@ -540,8 +540,8 @@ public class DoctorImpl extends MinimalEObjectImpl.Container implements Doctor {
 					: !SPECALIZATION_EDEFAULT.equals(specalization);
 		case Ssda_researchPackage.DOCTOR__PATIENT:
 			return patient != null && !patient.isEmpty();
-		case Ssda_researchPackage.DOCTOR__RECOMMEND_MED:
-			return recommend_med != null && !recommend_med.isEmpty();
+		case Ssda_researchPackage.DOCTOR__RECOMMEND_DRUG:
+			return recommend_drug != null && !recommend_drug.isEmpty();
 		case Ssda_researchPackage.DOCTOR__VIEW_PRED:
 			return view_pred != null;
 		}

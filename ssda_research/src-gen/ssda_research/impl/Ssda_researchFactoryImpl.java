@@ -63,8 +63,6 @@ public class Ssda_researchFactoryImpl extends EFactoryImpl implements Ssda_resea
 			return createPatient();
 		case Ssda_researchPackage.SYMPTOMS:
 			return createSymptoms();
-		case Ssda_researchPackage.MEDICINES:
-			return createMedicines();
 		case Ssda_researchPackage.DOCTOR:
 			return createDoctor();
 		case Ssda_researchPackage.DIABETES_PREDICTION:
@@ -129,6 +127,10 @@ public class Ssda_researchFactoryImpl extends EFactoryImpl implements Ssda_resea
 			return createPreprocessed_data();
 		case Ssda_researchPackage.DECISION_TREE_CLASSIFIER:
 			return createDecisionTreeClassifier();
+		case Ssda_researchPackage.ORAL_DRUGS:
+			return createOral_drugs();
+		case Ssda_researchPackage.NONORAL_DRUGS:
+			return createNonoral_Drugs();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -243,17 +245,6 @@ public class Ssda_researchFactoryImpl extends EFactoryImpl implements Ssda_resea
 	 * @generated
 	 */
 	@Override
-	public Medicines createMedicines() {
-		MedicinesImpl medicines = new MedicinesImpl();
-		return medicines;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Doctor createDoctor() {
 		DoctorImpl doctor = new DoctorImpl();
 		return doctor;
@@ -356,6 +347,28 @@ public class Ssda_researchFactoryImpl extends EFactoryImpl implements Ssda_resea
 	public DecisionTreeClassifier createDecisionTreeClassifier() {
 		DecisionTreeClassifierImpl decisionTreeClassifier = new DecisionTreeClassifierImpl();
 		return decisionTreeClassifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Oral_drugs createOral_drugs() {
+		Oral_drugsImpl oral_drugs = new Oral_drugsImpl();
+		return oral_drugs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Nonoral_Drugs createNonoral_Drugs() {
+		Nonoral_DrugsImpl nonoral_Drugs = new Nonoral_DrugsImpl();
+		return nonoral_Drugs;
 	}
 
 	/**

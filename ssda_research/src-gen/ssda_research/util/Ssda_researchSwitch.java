@@ -87,9 +87,9 @@ public class Ssda_researchSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Ssda_researchPackage.MEDICINES: {
-			Medicines medicines = (Medicines) theEObject;
-			T result = caseMedicines(medicines);
+		case Ssda_researchPackage.DRUG: {
+			Drug drug = (Drug) theEObject;
+			T result = caseDrug(drug);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -495,6 +495,24 @@ public class Ssda_researchSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case Ssda_researchPackage.ORAL_DRUGS: {
+			Oral_drugs oral_drugs = (Oral_drugs) theEObject;
+			T result = caseOral_drugs(oral_drugs);
+			if (result == null)
+				result = caseDrug(oral_drugs);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Ssda_researchPackage.NONORAL_DRUGS: {
+			Nonoral_Drugs nonoral_Drugs = (Nonoral_Drugs) theEObject;
+			T result = caseNonoral_Drugs(nonoral_Drugs);
+			if (result == null)
+				result = caseDrug(nonoral_Drugs);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -546,17 +564,17 @@ public class Ssda_researchSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medicines</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Drug</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medicines</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Drug</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMedicines(Medicines object) {
+	public T caseDrug(Drug object) {
 		return null;
 	}
 
@@ -752,6 +770,36 @@ public class Ssda_researchSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDecisionTreeClassifier(DecisionTreeClassifier object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Oral drugs</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Oral drugs</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOral_drugs(Oral_drugs object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Nonoral Drugs</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Nonoral Drugs</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNonoral_Drugs(Nonoral_Drugs object) {
 		return null;
 	}
 

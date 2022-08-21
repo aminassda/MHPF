@@ -22,8 +22,8 @@ import ssda_research.Dataset;
 import ssda_research.DiabetesPrediction;
 import ssda_research.DiabeticRecommendationSystem;
 import ssda_research.Doctor;
+import ssda_research.Drug;
 import ssda_research.ExploratoryDataAnalysis;
-import ssda_research.Medicines;
 import ssda_research.ModelOptimization;
 import ssda_research.Patient;
 import ssda_research.Ssda_researchPackage;
@@ -40,7 +40,7 @@ import ssda_research.classifiers;
  * <ul>
  *   <li>{@link ssda_research.impl.DiabeticRecommendationSystemImpl#getPatient <em>Patient</em>}</li>
  *   <li>{@link ssda_research.impl.DiabeticRecommendationSystemImpl#getSymp <em>Symp</em>}</li>
- *   <li>{@link ssda_research.impl.DiabeticRecommendationSystemImpl#getMed <em>Med</em>}</li>
+ *   <li>{@link ssda_research.impl.DiabeticRecommendationSystemImpl#getDrug <em>Drug</em>}</li>
  *   <li>{@link ssda_research.impl.DiabeticRecommendationSystemImpl#getDoctor <em>Doctor</em>}</li>
  *   <li>{@link ssda_research.impl.DiabeticRecommendationSystemImpl#getPred <em>Pred</em>}</li>
  *   <li>{@link ssda_research.impl.DiabeticRecommendationSystemImpl#getDataset <em>Dataset</em>}</li>
@@ -76,14 +76,14 @@ public class DiabeticRecommendationSystemImpl extends MinimalEObjectImpl.Contain
 	protected EList<Symptoms> symp;
 
 	/**
-	 * The cached value of the '{@link #getMed() <em>Med</em>}' containment reference list.
+	 * The cached value of the '{@link #getDrug() <em>Drug</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMed()
+	 * @see #getDrug()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Medicines> med;
+	protected EList<Drug> drug;
 
 	/**
 	 * The cached value of the '{@link #getDoctor() <em>Doctor</em>}' containment reference list.
@@ -218,12 +218,12 @@ public class DiabeticRecommendationSystemImpl extends MinimalEObjectImpl.Contain
 	 * @generated
 	 */
 	@Override
-	public EList<Medicines> getMed() {
-		if (med == null) {
-			med = new EObjectContainmentEList<Medicines>(Medicines.class, this,
-					Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__MED);
+	public EList<Drug> getDrug() {
+		if (drug == null) {
+			drug = new EObjectContainmentEList<Drug>(Drug.class, this,
+					Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DRUG);
 		}
-		return med;
+		return drug;
 	}
 
 	/**
@@ -350,8 +350,8 @@ public class DiabeticRecommendationSystemImpl extends MinimalEObjectImpl.Contain
 			return ((InternalEList<?>) getPatient()).basicRemove(otherEnd, msgs);
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__SYMP:
 			return ((InternalEList<?>) getSymp()).basicRemove(otherEnd, msgs);
-		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__MED:
-			return ((InternalEList<?>) getMed()).basicRemove(otherEnd, msgs);
+		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DRUG:
+			return ((InternalEList<?>) getDrug()).basicRemove(otherEnd, msgs);
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR:
 			return ((InternalEList<?>) getDoctor()).basicRemove(otherEnd, msgs);
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__PRED:
@@ -384,8 +384,8 @@ public class DiabeticRecommendationSystemImpl extends MinimalEObjectImpl.Contain
 			return getPatient();
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__SYMP:
 			return getSymp();
-		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__MED:
-			return getMed();
+		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DRUG:
+			return getDrug();
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR:
 			return getDoctor();
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__PRED:
@@ -423,9 +423,9 @@ public class DiabeticRecommendationSystemImpl extends MinimalEObjectImpl.Contain
 			getSymp().clear();
 			getSymp().addAll((Collection<? extends Symptoms>) newValue);
 			return;
-		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__MED:
-			getMed().clear();
-			getMed().addAll((Collection<? extends Medicines>) newValue);
+		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DRUG:
+			getDrug().clear();
+			getDrug().addAll((Collection<? extends Drug>) newValue);
 			return;
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR:
 			getDoctor().clear();
@@ -477,8 +477,8 @@ public class DiabeticRecommendationSystemImpl extends MinimalEObjectImpl.Contain
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__SYMP:
 			getSymp().clear();
 			return;
-		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__MED:
-			getMed().clear();
+		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DRUG:
+			getDrug().clear();
 			return;
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR:
 			getDoctor().clear();
@@ -520,8 +520,8 @@ public class DiabeticRecommendationSystemImpl extends MinimalEObjectImpl.Contain
 			return patient != null && !patient.isEmpty();
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__SYMP:
 			return symp != null && !symp.isEmpty();
-		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__MED:
-			return med != null && !med.isEmpty();
+		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DRUG:
+			return drug != null && !drug.isEmpty();
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__DOCTOR:
 			return doctor != null && !doctor.isEmpty();
 		case Ssda_researchPackage.DIABETIC_RECOMMENDATION_SYSTEM__PRED:

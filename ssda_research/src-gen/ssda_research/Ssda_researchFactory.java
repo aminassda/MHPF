@@ -49,15 +49,6 @@ public interface Ssda_researchFactory extends EFactory {
 	Symptoms createSymptoms();
 
 	/**
-	 * Returns a new object of class '<em>Medicines</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Medicines</em>'.
-	 * @generated
-	 */
-	Medicines createMedicines();
-
-	/**
 	 * Returns a new object of class '<em>Doctor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +137,24 @@ public interface Ssda_researchFactory extends EFactory {
 	 * @generated
 	 */
 	DecisionTreeClassifier createDecisionTreeClassifier();
+
+	/**
+	 * Returns a new object of class '<em>Oral drugs</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Oral drugs</em>'.
+	 * @generated
+	 */
+	Oral_drugs createOral_drugs();
+
+	/**
+	 * Returns a new object of class '<em>Nonoral Drugs</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Nonoral Drugs</em>'.
+	 * @generated
+	 */
+	Nonoral_Drugs createNonoral_Drugs();
 
 	/**
 	 * Returns a new object of class '<em>MLP Classifier</em>'.

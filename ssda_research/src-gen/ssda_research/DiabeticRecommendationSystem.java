@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ssda_research.DiabeticRecommendationSystem#getPatient <em>Patient</em>}</li>
  *   <li>{@link ssda_research.DiabeticRecommendationSystem#getSymp <em>Symp</em>}</li>
- *   <li>{@link ssda_research.DiabeticRecommendationSystem#getMed <em>Med</em>}</li>
+ *   <li>{@link ssda_research.DiabeticRecommendationSystem#getDrug <em>Drug</em>}</li>
  *   <li>{@link ssda_research.DiabeticRecommendationSystem#getDoctor <em>Doctor</em>}</li>
  *   <li>{@link ssda_research.DiabeticRecommendationSystem#getPred <em>Pred</em>}</li>
  *   <li>{@link ssda_research.DiabeticRecommendationSystem#getDataset <em>Dataset</em>}</li>
@@ -58,16 +58,16 @@ public interface DiabeticRecommendationSystem extends EObject {
 	EList<Symptoms> getSymp();
 
 	/**
-	 * Returns the value of the '<em><b>Med</b></em>' containment reference list.
-	 * The list contents are of type {@link ssda_research.Medicines}.
+	 * Returns the value of the '<em><b>Drug</b></em>' containment reference list.
+	 * The list contents are of type {@link ssda_research.Drug}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Med</em>' containment reference list.
-	 * @see ssda_research.Ssda_researchPackage#getDiabeticRecommendationSystem_Med()
+	 * @return the value of the '<em>Drug</em>' containment reference list.
+	 * @see ssda_research.Ssda_researchPackage#getDiabeticRecommendationSystem_Drug()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Medicines> getMed();
+	EList<Drug> getDrug();
 
 	/**
 	 * Returns the value of the '<em><b>Doctor</b></em>' containment reference list.

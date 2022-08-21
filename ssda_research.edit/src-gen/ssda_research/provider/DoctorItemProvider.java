@@ -59,7 +59,7 @@ public class DoctorItemProvider extends ItemProviderAdapter implements IEditingD
 			addPhone_noPropertyDescriptor(object);
 			addSpecalizationPropertyDescriptor(object);
 			addPatientPropertyDescriptor(object);
-			addRecommend_drugPropertyDescriptor(object);
+			addRecommend_medPropertyDescriptor(object);
 			addView_predPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -160,18 +160,18 @@ public class DoctorItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Recommend drug feature.
+	 * This adds a property descriptor for the Recommend med feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRecommend_drugPropertyDescriptor(Object object) {
+	protected void addRecommend_medPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Doctor_recommend_drug_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Doctor_recommend_drug_feature",
+						getResourceLocator(), getString("_UI_Doctor_recommend_med_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Doctor_recommend_med_feature",
 								"_UI_Doctor_type"),
-						Ssda_researchPackage.Literals.DOCTOR__RECOMMEND_DRUG, true, false, true, null, null, null));
+						Ssda_researchPackage.Literals.DOCTOR__RECOMMEND_MED, true, false, true, null, null, null));
 	}
 
 	/**
